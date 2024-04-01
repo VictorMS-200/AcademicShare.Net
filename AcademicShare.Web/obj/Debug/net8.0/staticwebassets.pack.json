@@ -1,0 +1,433 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\lusto\\OneDrive\\EstudosDeProgramação\\Estudos\\AcademicShare.Web\\AcademicShare.Web\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\AcademicShare.Web.bundle.scp.css",
+      "PackagePath": "staticwebassets\\AcademicShare.Web.bundle.scp.css"
+    },
+    {
+      "Id": "C:\\Users\\lusto\\OneDrive\\EstudosDeProgramação\\Estudos\\AcademicShare.Web\\AcademicShare.Web\\wwwroot\\css\\Profile.css",
+      "PackagePath": "staticwebassets\\css\\Profile.css"
+    },
+    {
+      "Id": "C:\\Users\\lusto\\OneDrive\\EstudosDeProgramação\\Estudos\\AcademicShare.Web\\AcademicShare.Web\\wwwroot\\css\\site.css",
+      "PackagePath": "staticwebassets\\css\\site.css"
+    },
+    {
+      "Id": "C:\\Users\\lusto\\OneDrive\\EstudosDeProgramação\\Estudos\\AcademicShare.Web\\AcademicShare.Web\\wwwroot\\favicon.ico",
+      "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "C:\\Users\\lusto\\OneDrive\\EstudosDeProgramação\\Estudos\\AcademicShare.Web\\AcademicShare.Web\\wwwroot\\imagesPost\\03a69b80-e986-4609-8fdb-4027dc4bbb23_1691916-182849334.jpg",
+      "PackagePath": "staticwebassets\\imagesPost\\03a69b80-e986-4609-8fdb-4027dc4bbb23_1691916-182849334.jpg"
+    },
+    {
+      "Id": "C:\\Users\\lusto\\OneDrive\\EstudosDeProgramação\\Estudos\\AcademicShare.Web\\AcademicShare.Web\\wwwroot\\imagesPost\\0fd07d26-9da0-464d-a47c-f70157507a59_268543-3078984699.jpg",
+      "PackagePath": "staticwebassets\\imagesPost\\0fd07d26-9da0-464d-a47c-f70157507a59_268543-3078984699.jpg"
+    },
+    {
+      "Id": "C:\\Users\\lusto\\OneDrive\\EstudosDeProgramação\\Estudos\\AcademicShare.Web\\AcademicShare.Web\\wwwroot\\imagesPost\\1c0c0239-8bd1-4a4e-ba57-833f1bd05d3c_347c2ca5b4c637d405a550be0319678b.gif",
+      "PackagePath": "staticwebassets\\imagesPost\\1c0c0239-8bd1-4a4e-ba57-833f1bd05d3c_347c2ca5b4c637d405a550be0319678b.gif"
+    },
+    {
+      "Id": "C:\\Users\\lusto\\OneDrive\\EstudosDeProgramação\\Estudos\\AcademicShare.Web\\AcademicShare.Web\\wwwroot\\imagesPost\\2499562c-8605-4751-a252-a3d228672f5f_Screenshot_2.png",
+      "PackagePath": "staticwebassets\\imagesPost\\2499562c-8605-4751-a252-a3d228672f5f_Screenshot_2.png"
+    },
+    {
+      "Id": "C:\\Users\\lusto\\OneDrive\\EstudosDeProgramação\\Estudos\\AcademicShare.Web\\AcademicShare.Web\\wwwroot\\imagesPost\\25071fed-b8ee-4425-b707-ae85d3d90154_Mid-East_Allied_Forces.jpg",
+      "PackagePath": "staticwebassets\\imagesPost\\25071fed-b8ee-4425-b707-ae85d3d90154_Mid-East_Allied_Forces.jpg"
+    },
+    {
+      "Id": "C:\\Users\\lusto\\OneDrive\\EstudosDeProgramação\\Estudos\\AcademicShare.Web\\AcademicShare.Web\\wwwroot\\imagesPost\\2d7477eb-5a2f-4c29-8da5-6f90ac4756ec_Screenshot_2.png",
+      "PackagePath": "staticwebassets\\imagesPost\\2d7477eb-5a2f-4c29-8da5-6f90ac4756ec_Screenshot_2.png"
+    },
+    {
+      "Id": "C:\\Users\\lusto\\OneDrive\\EstudosDeProgramação\\Estudos\\AcademicShare.Web\\AcademicShare.Web\\wwwroot\\imagesPost\\2f361f9f-1aed-41a1-902b-8c0b28d655f2_Eren_Yeager_character_image_850.png",
+      "PackagePath": "staticwebassets\\imagesPost\\2f361f9f-1aed-41a1-902b-8c0b28d655f2_Eren_Yeager_character_image_850.png"
+    },
+    {
+      "Id": "C:\\Users\\lusto\\OneDrive\\EstudosDeProgramação\\Estudos\\AcademicShare.Web\\AcademicShare.Web\\wwwroot\\imagesPost\\36a08e38-df3f-476d-9f51-1f09cc9af648_d240393ef3c16613b6735598ed6622f296819b7a-2362x1306.png",
+      "PackagePath": "staticwebassets\\imagesPost\\36a08e38-df3f-476d-9f51-1f09cc9af648_d240393ef3c16613b6735598ed6622f296819b7a-2362x1306.png"
+    },
+    {
+      "Id": "C:\\Users\\lusto\\OneDrive\\EstudosDeProgramação\\Estudos\\AcademicShare.Web\\AcademicShare.Web\\wwwroot\\imagesPost\\37ada691-adda-4ce9-9286-81652f4f102b_1691916-182849334.jpg",
+      "PackagePath": "staticwebassets\\imagesPost\\37ada691-adda-4ce9-9286-81652f4f102b_1691916-182849334.jpg"
+    },
+    {
+      "Id": "C:\\Users\\lusto\\OneDrive\\EstudosDeProgramação\\Estudos\\AcademicShare.Web\\AcademicShare.Web\\wwwroot\\imagesPost\\4d6aa70f-2e1e-479b-9026-ebe17ab773d8_Screenshot_1.png",
+      "PackagePath": "staticwebassets\\imagesPost\\4d6aa70f-2e1e-479b-9026-ebe17ab773d8_Screenshot_1.png"
+    },
+    {
+      "Id": "C:\\Users\\lusto\\OneDrive\\EstudosDeProgramação\\Estudos\\AcademicShare.Web\\AcademicShare.Web\\wwwroot\\imagesPost\\5a94215c-9d24-48ab-9eff-83e65aa50c9e_Ewr7fYJUYAAVq9F.jpg",
+      "PackagePath": "staticwebassets\\imagesPost\\5a94215c-9d24-48ab-9eff-83e65aa50c9e_Ewr7fYJUYAAVq9F.jpg"
+    },
+    {
+      "Id": "C:\\Users\\lusto\\OneDrive\\EstudosDeProgramação\\Estudos\\AcademicShare.Web\\AcademicShare.Web\\wwwroot\\imagesPost\\5e69e498-7f4b-4f23-87e0-b93664fddb6c_268543-3078984699.jpg",
+      "PackagePath": "staticwebassets\\imagesPost\\5e69e498-7f4b-4f23-87e0-b93664fddb6c_268543-3078984699.jpg"
+    },
+    {
+      "Id": "C:\\Users\\lusto\\OneDrive\\EstudosDeProgramação\\Estudos\\AcademicShare.Web\\AcademicShare.Web\\wwwroot\\imagesPost\\644beec9-bba6-4881-970e-2063865b207b_461216-desk-work-3150512634.jpg",
+      "PackagePath": "staticwebassets\\imagesPost\\644beec9-bba6-4881-970e-2063865b207b_461216-desk-work-3150512634.jpg"
+    },
+    {
+      "Id": "C:\\Users\\lusto\\OneDrive\\EstudosDeProgramação\\Estudos\\AcademicShare.Web\\AcademicShare.Web\\wwwroot\\imagesPost\\77685525-7f75-497d-be45-acad117679c7_4ee34739a37d0775fbeb88efac04b47c.jpg",
+      "PackagePath": "staticwebassets\\imagesPost\\77685525-7f75-497d-be45-acad117679c7_4ee34739a37d0775fbeb88efac04b47c.jpg"
+    },
+    {
+      "Id": "C:\\Users\\lusto\\OneDrive\\EstudosDeProgramação\\Estudos\\AcademicShare.Web\\AcademicShare.Web\\wwwroot\\imagesPost\\8a8e1132-b21f-4904-87fc-2ffb49fdab58_Screenshot_2.png",
+      "PackagePath": "staticwebassets\\imagesPost\\8a8e1132-b21f-4904-87fc-2ffb49fdab58_Screenshot_2.png"
+    },
+    {
+      "Id": "C:\\Users\\lusto\\OneDrive\\EstudosDeProgramação\\Estudos\\AcademicShare.Web\\AcademicShare.Web\\wwwroot\\imagesPost\\9142f2a3-542d-472a-9e4a-86c42b78f1c9_Eren_Yeager_character_image_850.png",
+      "PackagePath": "staticwebassets\\imagesPost\\9142f2a3-542d-472a-9e4a-86c42b78f1c9_Eren_Yeager_character_image_850.png"
+    },
+    {
+      "Id": "C:\\Users\\lusto\\OneDrive\\EstudosDeProgramação\\Estudos\\AcademicShare.Web\\AcademicShare.Web\\wwwroot\\imagesPost\\94efae99-90c1-47bc-9e3e-ca2e0abfee56_Screenshot_2.png",
+      "PackagePath": "staticwebassets\\imagesPost\\94efae99-90c1-47bc-9e3e-ca2e0abfee56_Screenshot_2.png"
+    },
+    {
+      "Id": "C:\\Users\\lusto\\OneDrive\\EstudosDeProgramação\\Estudos\\AcademicShare.Web\\AcademicShare.Web\\wwwroot\\imagesPost\\9e79e152-c30c-4019-b3ab-7ef3991ca542_268543-3078984699.jpg",
+      "PackagePath": "staticwebassets\\imagesPost\\9e79e152-c30c-4019-b3ab-7ef3991ca542_268543-3078984699.jpg"
+    },
+    {
+      "Id": "C:\\Users\\lusto\\OneDrive\\EstudosDeProgramação\\Estudos\\AcademicShare.Web\\AcademicShare.Web\\wwwroot\\imagesPost\\a3350f3e-d835-4194-9b43-d196d3365bdc_268543-3078984699.jpg",
+      "PackagePath": "staticwebassets\\imagesPost\\a3350f3e-d835-4194-9b43-d196d3365bdc_268543-3078984699.jpg"
+    },
+    {
+      "Id": "C:\\Users\\lusto\\OneDrive\\EstudosDeProgramação\\Estudos\\AcademicShare.Web\\AcademicShare.Web\\wwwroot\\imagesPost\\ad234872-6c4b-444f-ba4a-b1075d74be98_Screenshot_2.png",
+      "PackagePath": "staticwebassets\\imagesPost\\ad234872-6c4b-444f-ba4a-b1075d74be98_Screenshot_2.png"
+    },
+    {
+      "Id": "C:\\Users\\lusto\\OneDrive\\EstudosDeProgramação\\Estudos\\AcademicShare.Web\\AcademicShare.Web\\wwwroot\\imagesPost\\ad42da8f-cbd9-4e2d-98d7-7d6930e54466_1691916-182849334.jpg",
+      "PackagePath": "staticwebassets\\imagesPost\\ad42da8f-cbd9-4e2d-98d7-7d6930e54466_1691916-182849334.jpg"
+    },
+    {
+      "Id": "C:\\Users\\lusto\\OneDrive\\EstudosDeProgramação\\Estudos\\AcademicShare.Web\\AcademicShare.Web\\wwwroot\\imagesPost\\be89a34c-8e62-4e8f-8c44-f5f6d924c9a5_461216-desk-work-3150512634.jpg",
+      "PackagePath": "staticwebassets\\imagesPost\\be89a34c-8e62-4e8f-8c44-f5f6d924c9a5_461216-desk-work-3150512634.jpg"
+    },
+    {
+      "Id": "C:\\Users\\lusto\\OneDrive\\EstudosDeProgramação\\Estudos\\AcademicShare.Web\\AcademicShare.Web\\wwwroot\\imagesPost\\dcb1990f-486e-4ece-a512-4850456965ac_Screenshot_2.png",
+      "PackagePath": "staticwebassets\\imagesPost\\dcb1990f-486e-4ece-a512-4850456965ac_Screenshot_2.png"
+    },
+    {
+      "Id": "C:\\Users\\lusto\\OneDrive\\EstudosDeProgramação\\Estudos\\AcademicShare.Web\\AcademicShare.Web\\wwwroot\\imagesPost\\dfd39a51-344e-4c0c-9caf-b654122dc524_mate.png",
+      "PackagePath": "staticwebassets\\imagesPost\\dfd39a51-344e-4c0c-9caf-b654122dc524_mate.png"
+    },
+    {
+      "Id": "C:\\Users\\lusto\\OneDrive\\EstudosDeProgramação\\Estudos\\AcademicShare.Web\\AcademicShare.Web\\wwwroot\\imagesPost\\e3c0dc80-6519-4a89-89a9-e99131c9af79_Screenshot_1.png",
+      "PackagePath": "staticwebassets\\imagesPost\\e3c0dc80-6519-4a89-89a9-e99131c9af79_Screenshot_1.png"
+    },
+    {
+      "Id": "C:\\Users\\lusto\\OneDrive\\EstudosDeProgramação\\Estudos\\AcademicShare.Web\\AcademicShare.Web\\wwwroot\\imagesPost\\ebb10c0f-fe49-4474-bf64-d62942ca991f_Screenshot_2.png",
+      "PackagePath": "staticwebassets\\imagesPost\\ebb10c0f-fe49-4474-bf64-d62942ca991f_Screenshot_2.png"
+    },
+    {
+      "Id": "C:\\Users\\lusto\\OneDrive\\EstudosDeProgramação\\Estudos\\AcademicShare.Web\\AcademicShare.Web\\wwwroot\\imagesPost\\f1883c67-f0c3-4d0c-b8ac-b255febec694_461216-desk-work-3150512634.jpg",
+      "PackagePath": "staticwebassets\\imagesPost\\f1883c67-f0c3-4d0c-b8ac-b255febec694_461216-desk-work-3150512634.jpg"
+    },
+    {
+      "Id": "C:\\Users\\lusto\\OneDrive\\EstudosDeProgramação\\Estudos\\AcademicShare.Web\\AcademicShare.Web\\wwwroot\\imagesPost\\f24e26aa-efb6-4147-aa09-ae25742f71f8_aaaaa.jfif",
+      "PackagePath": "staticwebassets\\imagesPost\\f24e26aa-efb6-4147-aa09-ae25742f71f8_aaaaa.jfif"
+    },
+    {
+      "Id": "C:\\Users\\lusto\\OneDrive\\EstudosDeProgramação\\Estudos\\AcademicShare.Web\\AcademicShare.Web\\wwwroot\\imagesPost\\fb63d77e-115b-4562-91ba-d9649a23af81_Screenshot_2.png",
+      "PackagePath": "staticwebassets\\imagesPost\\fb63d77e-115b-4562-91ba-d9649a23af81_Screenshot_2.png"
+    },
+    {
+      "Id": "C:\\Users\\lusto\\OneDrive\\EstudosDeProgramação\\Estudos\\AcademicShare.Web\\AcademicShare.Web\\wwwroot\\imagesProfile\\avatar\\ae88c1ad-c2a7-4d62-a473-6477dfcbed49_Eren_Yeager_character_image_850.png",
+      "PackagePath": "staticwebassets\\imagesProfile\\avatar\\ae88c1ad-c2a7-4d62-a473-6477dfcbed49_Eren_Yeager_character_image_850.png"
+    },
+    {
+      "Id": "C:\\Users\\lusto\\OneDrive\\EstudosDeProgramação\\Estudos\\AcademicShare.Web\\AcademicShare.Web\\wwwroot\\imagesProfile\\avatar\\default.png",
+      "PackagePath": "staticwebassets\\imagesProfile\\avatar\\default.png"
+    },
+    {
+      "Id": "C:\\Users\\lusto\\OneDrive\\EstudosDeProgramação\\Estudos\\AcademicShare.Web\\AcademicShare.Web\\wwwroot\\imagesProfile\\avatar\\fb2fb3e6-7d91-4eba-81aa-8cd953ba6ac2_Eren_Yeager_character_image_850.png",
+      "PackagePath": "staticwebassets\\imagesProfile\\avatar\\fb2fb3e6-7d91-4eba-81aa-8cd953ba6ac2_Eren_Yeager_character_image_850.png"
+    },
+    {
+      "Id": "C:\\Users\\lusto\\OneDrive\\EstudosDeProgramação\\Estudos\\AcademicShare.Web\\AcademicShare.Web\\wwwroot\\imagesProfile\\banner\\1d8ad1a3-3979-4106-8728-27ddf1075df0_994479.png",
+      "PackagePath": "staticwebassets\\imagesProfile\\banner\\1d8ad1a3-3979-4106-8728-27ddf1075df0_994479.png"
+    },
+    {
+      "Id": "C:\\Users\\lusto\\OneDrive\\EstudosDeProgramação\\Estudos\\AcademicShare.Web\\AcademicShare.Web\\wwwroot\\imagesProfile\\banner\\83ab36eb-d093-44d2-a773-9d6680f6da5c_img102.jpg",
+      "PackagePath": "staticwebassets\\imagesProfile\\banner\\83ab36eb-d093-44d2-a773-9d6680f6da5c_img102.jpg"
+    },
+    {
+      "Id": "C:\\Users\\lusto\\OneDrive\\EstudosDeProgramação\\Estudos\\AcademicShare.Web\\AcademicShare.Web\\wwwroot\\imagesProfile\\banner\\ac67fd10-bd5b-4b72-b668-55138ee38beb_7b72ace3824cfbdce17bf0737c49e4b3.jpg",
+      "PackagePath": "staticwebassets\\imagesProfile\\banner\\ac67fd10-bd5b-4b72-b668-55138ee38beb_7b72ace3824cfbdce17bf0737c49e4b3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\lusto\\OneDrive\\EstudosDeProgramação\\Estudos\\AcademicShare.Web\\AcademicShare.Web\\wwwroot\\imagesProfile\\banner\\cfa4264d-54d5-4ce2-a354-a31329723837_Ewr7fYJUYAAVq9F.jpg",
+      "PackagePath": "staticwebassets\\imagesProfile\\banner\\cfa4264d-54d5-4ce2-a354-a31329723837_Ewr7fYJUYAAVq9F.jpg"
+    },
+    {
+      "Id": "C:\\Users\\lusto\\OneDrive\\EstudosDeProgramação\\Estudos\\AcademicShare.Web\\AcademicShare.Web\\wwwroot\\imagesProfile\\banner\\default.png",
+      "PackagePath": "staticwebassets\\imagesProfile\\banner\\default.png"
+    },
+    {
+      "Id": "C:\\Users\\lusto\\OneDrive\\EstudosDeProgramação\\Estudos\\AcademicShare.Web\\AcademicShare.Web\\wwwroot\\imagesSite\\logo (1).svg",
+      "PackagePath": "staticwebassets\\imagesSite\\logo (1).svg"
+    },
+    {
+      "Id": "C:\\Users\\lusto\\OneDrive\\EstudosDeProgramação\\Estudos\\AcademicShare.Web\\AcademicShare.Web\\wwwroot\\imagesSite\\logo (2).svg",
+      "PackagePath": "staticwebassets\\imagesSite\\logo (2).svg"
+    },
+    {
+      "Id": "C:\\Users\\lusto\\OneDrive\\EstudosDeProgramação\\Estudos\\AcademicShare.Web\\AcademicShare.Web\\wwwroot\\imagesSite\\logo.svg",
+      "PackagePath": "staticwebassets\\imagesSite\\logo.svg"
+    },
+    {
+      "Id": "C:\\Users\\lusto\\OneDrive\\EstudosDeProgramação\\Estudos\\AcademicShare.Web\\AcademicShare.Web\\wwwroot\\js\\imgLoad.js",
+      "PackagePath": "staticwebassets\\js\\imgLoad.js"
+    },
+    {
+      "Id": "C:\\Users\\lusto\\OneDrive\\EstudosDeProgramação\\Estudos\\AcademicShare.Web\\AcademicShare.Web\\wwwroot\\js\\site.js",
+      "PackagePath": "staticwebassets\\js\\site.js"
+    },
+    {
+      "Id": "C:\\Users\\lusto\\OneDrive\\EstudosDeProgramação\\Estudos\\AcademicShare.Web\\AcademicShare.Web\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "PackagePath": "staticwebassets\\lib\\bootstrap"
+    },
+    {
+      "Id": "C:\\Users\\lusto\\OneDrive\\EstudosDeProgramação\\Estudos\\AcademicShare.Web\\AcademicShare.Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
+    },
+    {
+      "Id": "C:\\Users\\lusto\\OneDrive\\EstudosDeProgramação\\Estudos\\AcademicShare.Web\\AcademicShare.Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
+    },
+    {
+      "Id": "C:\\Users\\lusto\\OneDrive\\EstudosDeProgramação\\Estudos\\AcademicShare.Web\\AcademicShare.Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
+    },
+    {
+      "Id": "C:\\Users\\lusto\\OneDrive\\EstudosDeProgramação\\Estudos\\AcademicShare.Web\\AcademicShare.Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\lusto\\OneDrive\\EstudosDeProgramação\\Estudos\\AcademicShare.Web\\AcademicShare.Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\lusto\\OneDrive\\EstudosDeProgramação\\Estudos\\AcademicShare.Web\\AcademicShare.Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\lusto\\OneDrive\\EstudosDeProgramação\\Estudos\\AcademicShare.Web\\AcademicShare.Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\lusto\\OneDrive\\EstudosDeProgramação\\Estudos\\AcademicShare.Web\\AcademicShare.Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\lusto\\OneDrive\\EstudosDeProgramação\\Estudos\\AcademicShare.Web\\AcademicShare.Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
+    },
+    {
+      "Id": "C:\\Users\\lusto\\OneDrive\\EstudosDeProgramação\\Estudos\\AcademicShare.Web\\AcademicShare.Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
+    },
+    {
+      "Id": "C:\\Users\\lusto\\OneDrive\\EstudosDeProgramação\\Estudos\\AcademicShare.Web\\AcademicShare.Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
+    },
+    {
+      "Id": "C:\\Users\\lusto\\OneDrive\\EstudosDeProgramação\\Estudos\\AcademicShare.Web\\AcademicShare.Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\lusto\\OneDrive\\EstudosDeProgramação\\Estudos\\AcademicShare.Web\\AcademicShare.Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\lusto\\OneDrive\\EstudosDeProgramação\\Estudos\\AcademicShare.Web\\AcademicShare.Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\lusto\\OneDrive\\EstudosDeProgramação\\Estudos\\AcademicShare.Web\\AcademicShare.Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\lusto\\OneDrive\\EstudosDeProgramação\\Estudos\\AcademicShare.Web\\AcademicShare.Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\lusto\\OneDrive\\EstudosDeProgramação\\Estudos\\AcademicShare.Web\\AcademicShare.Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
+    },
+    {
+      "Id": "C:\\Users\\lusto\\OneDrive\\EstudosDeProgramação\\Estudos\\AcademicShare.Web\\AcademicShare.Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
+    },
+    {
+      "Id": "C:\\Users\\lusto\\OneDrive\\EstudosDeProgramação\\Estudos\\AcademicShare.Web\\AcademicShare.Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
+    },
+    {
+      "Id": "C:\\Users\\lusto\\OneDrive\\EstudosDeProgramação\\Estudos\\AcademicShare.Web\\AcademicShare.Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\lusto\\OneDrive\\EstudosDeProgramação\\Estudos\\AcademicShare.Web\\AcademicShare.Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\lusto\\OneDrive\\EstudosDeProgramação\\Estudos\\AcademicShare.Web\\AcademicShare.Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\lusto\\OneDrive\\EstudosDeProgramação\\Estudos\\AcademicShare.Web\\AcademicShare.Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\lusto\\OneDrive\\EstudosDeProgramação\\Estudos\\AcademicShare.Web\\AcademicShare.Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\lusto\\OneDrive\\EstudosDeProgramação\\Estudos\\AcademicShare.Web\\AcademicShare.Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css"
+    },
+    {
+      "Id": "C:\\Users\\lusto\\OneDrive\\EstudosDeProgramação\\Estudos\\AcademicShare.Web\\AcademicShare.Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
+    },
+    {
+      "Id": "C:\\Users\\lusto\\OneDrive\\EstudosDeProgramação\\Estudos\\AcademicShare.Web\\AcademicShare.Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\Users\\lusto\\OneDrive\\EstudosDeProgramação\\Estudos\\AcademicShare.Web\\AcademicShare.Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\lusto\\OneDrive\\EstudosDeProgramação\\Estudos\\AcademicShare.Web\\AcademicShare.Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\lusto\\OneDrive\\EstudosDeProgramação\\Estudos\\AcademicShare.Web\\AcademicShare.Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\lusto\\OneDrive\\EstudosDeProgramação\\Estudos\\AcademicShare.Web\\AcademicShare.Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\lusto\\OneDrive\\EstudosDeProgramação\\Estudos\\AcademicShare.Web\\AcademicShare.Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\lusto\\OneDrive\\EstudosDeProgramação\\Estudos\\AcademicShare.Web\\AcademicShare.Web\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
+    },
+    {
+      "Id": "C:\\Users\\lusto\\OneDrive\\EstudosDeProgramação\\Estudos\\AcademicShare.Web\\AcademicShare.Web\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
+    },
+    {
+      "Id": "C:\\Users\\lusto\\OneDrive\\EstudosDeProgramação\\Estudos\\AcademicShare.Web\\AcademicShare.Web\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
+    },
+    {
+      "Id": "C:\\Users\\lusto\\OneDrive\\EstudosDeProgramação\\Estudos\\AcademicShare.Web\\AcademicShare.Web\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\lusto\\OneDrive\\EstudosDeProgramação\\Estudos\\AcademicShare.Web\\AcademicShare.Web\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
+    },
+    {
+      "Id": "C:\\Users\\lusto\\OneDrive\\EstudosDeProgramação\\Estudos\\AcademicShare.Web\\AcademicShare.Web\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
+    },
+    {
+      "Id": "C:\\Users\\lusto\\OneDrive\\EstudosDeProgramação\\Estudos\\AcademicShare.Web\\AcademicShare.Web\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
+    },
+    {
+      "Id": "C:\\Users\\lusto\\OneDrive\\EstudosDeProgramação\\Estudos\\AcademicShare.Web\\AcademicShare.Web\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\lusto\\OneDrive\\EstudosDeProgramação\\Estudos\\AcademicShare.Web\\AcademicShare.Web\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js"
+    },
+    {
+      "Id": "C:\\Users\\lusto\\OneDrive\\EstudosDeProgramação\\Estudos\\AcademicShare.Web\\AcademicShare.Web\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
+    },
+    {
+      "Id": "C:\\Users\\lusto\\OneDrive\\EstudosDeProgramação\\Estudos\\AcademicShare.Web\\AcademicShare.Web\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
+    },
+    {
+      "Id": "C:\\Users\\lusto\\OneDrive\\EstudosDeProgramação\\Estudos\\AcademicShare.Web\\AcademicShare.Web\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\lusto\\OneDrive\\EstudosDeProgramação\\Estudos\\AcademicShare.Web\\AcademicShare.Web\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Id": "C:\\Users\\lusto\\OneDrive\\EstudosDeProgramação\\Estudos\\AcademicShare.Web\\AcademicShare.Web\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
+    },
+    {
+      "Id": "C:\\Users\\lusto\\OneDrive\\EstudosDeProgramação\\Estudos\\AcademicShare.Web\\AcademicShare.Web\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
+    },
+    {
+      "Id": "C:\\Users\\lusto\\OneDrive\\EstudosDeProgramação\\Estudos\\AcademicShare.Web\\AcademicShare.Web\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\LICENSE.md"
+    },
+    {
+      "Id": "C:\\Users\\lusto\\OneDrive\\EstudosDeProgramação\\Estudos\\AcademicShare.Web\\AcademicShare.Web\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.js"
+    },
+    {
+      "Id": "C:\\Users\\lusto\\OneDrive\\EstudosDeProgramação\\Estudos\\AcademicShare.Web\\AcademicShare.Web\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.min.js"
+    },
+    {
+      "Id": "C:\\Users\\lusto\\OneDrive\\EstudosDeProgramação\\Estudos\\AcademicShare.Web\\AcademicShare.Web\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.js"
+    },
+    {
+      "Id": "C:\\Users\\lusto\\OneDrive\\EstudosDeProgramação\\Estudos\\AcademicShare.Web\\AcademicShare.Web\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
+    },
+    {
+      "Id": "C:\\Users\\lusto\\OneDrive\\EstudosDeProgramação\\Estudos\\AcademicShare.Web\\AcademicShare.Web\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery\\LICENSE.txt"
+    },
+    {
+      "Id": "C:\\Users\\lusto\\OneDrive\\EstudosDeProgramação\\Estudos\\AcademicShare.Web\\AcademicShare.Web\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.js"
+    },
+    {
+      "Id": "C:\\Users\\lusto\\OneDrive\\EstudosDeProgramação\\Estudos\\AcademicShare.Web\\AcademicShare.Web\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.js"
+    },
+    {
+      "Id": "C:\\Users\\lusto\\OneDrive\\EstudosDeProgramação\\Estudos\\AcademicShare.Web\\AcademicShare.Web\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.AcademicShare.Web.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.AcademicShare.Web.props",
+      "PackagePath": "build\\AcademicShare.Web.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.AcademicShare.Web.props",
+      "PackagePath": "buildMultiTargeting\\AcademicShare.Web.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.AcademicShare.Web.props",
+      "PackagePath": "buildTransitive\\AcademicShare.Web.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

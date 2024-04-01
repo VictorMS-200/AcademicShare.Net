@@ -1,0 +1,73 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\lusto\\OneDrive\\EstudosDePrograma\u00E7\u00E3o\\Estudos\\AcademicShare.Web\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A4BC5288-9AE4-43B3-8170-CAD28020EA08}|AcademicShare.Web\\AcademicShare.Web.csproj|c:\\users\\lusto\\onedrive\\estudosdeprograma\u00E7\u00E3o\\estudos\\academicshare.web\\academicshare.web\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A4BC5288-9AE4-43B3-8170-CAD28020EA08}|AcademicShare.Web\\AcademicShare.Web.csproj|solutionrelative:academicshare.web\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A4BC5288-9AE4-43B3-8170-CAD28020EA08}|AcademicShare.Web\\AcademicShare.Web.csproj|c:\\users\\lusto\\onedrive\\estudosdeprograma\u00E7\u00E3o\\estudos\\academicshare.web\\academicshare.web\\models\\loginviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A4BC5288-9AE4-43B3-8170-CAD28020EA08}|AcademicShare.Web\\AcademicShare.Web.csproj|solutionrelative:academicshare.web\\models\\loginviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A4BC5288-9AE4-43B3-8170-CAD28020EA08}|AcademicShare.Web\\AcademicShare.Web.csproj|c:\\users\\lusto\\onedrive\\estudosdeprograma\u00E7\u00E3o\\estudos\\academicshare.web\\academicshare.web\\models\\registerviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A4BC5288-9AE4-43B3-8170-CAD28020EA08}|AcademicShare.Web\\AcademicShare.Web.csproj|solutionrelative:academicshare.web\\models\\registerviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AccountController.cs",
+              "DocumentMoniker": "C:\\Users\\lusto\\OneDrive\\EstudosDePrograma\u00E7\u00E3o\\Estudos\\AcademicShare.Web\\AcademicShare.Web\\Controllers\\AccountController.cs",
+              "RelativeDocumentMoniker": "AcademicShare.Web\\Controllers\\AccountController.cs",
+              "ToolTip": "C:\\Users\\lusto\\OneDrive\\EstudosDePrograma\u00E7\u00E3o\\Estudos\\AcademicShare.Web\\AcademicShare.Web\\Controllers\\AccountController.cs",
+              "RelativeToolTip": "AcademicShare.Web\\Controllers\\AccountController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAACAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-27T23:58:56.452Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "RegisterViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\lusto\\OneDrive\\EstudosDePrograma\u00E7\u00E3o\\Estudos\\AcademicShare.Web\\AcademicShare.Web\\Models\\RegisterViewModel.cs",
+              "RelativeDocumentMoniker": "AcademicShare.Web\\Models\\RegisterViewModel.cs",
+              "ToolTip": "C:\\Users\\lusto\\OneDrive\\EstudosDePrograma\u00E7\u00E3o\\Estudos\\AcademicShare.Web\\AcademicShare.Web\\Models\\RegisterViewModel.cs",
+              "RelativeToolTip": "AcademicShare.Web\\Models\\RegisterViewModel.cs",
+              "ViewState": "AQIAAAcAAAAAAAAAAAAAAAgAAAAPAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-27T23:57:11.261Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "LoginViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\lusto\\OneDrive\\EstudosDePrograma\u00E7\u00E3o\\Estudos\\AcademicShare.Web\\AcademicShare.Web\\Models\\LoginViewModel.cs",
+              "RelativeDocumentMoniker": "AcademicShare.Web\\Models\\LoginViewModel.cs",
+              "ToolTip": "C:\\Users\\lusto\\OneDrive\\EstudosDePrograma\u00E7\u00E3o\\Estudos\\AcademicShare.Web\\AcademicShare.Web\\Models\\LoginViewModel.cs",
+              "RelativeToolTip": "AcademicShare.Web\\Models\\LoginViewModel.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAAA8AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-27T23:54:47.004Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,66 @@
+﻿@model PaginatedList<AcademicShare.Web.Models.Post>
+@inject AcademicShareDbContext _context
+
+@{
+    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Posts";
+}
+@section Styles {
+    <link rel="stylesheet" href="~/css/profile.css">
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<form asp-controller="Posts" asp-action="Index" method="get">
+    <p>
+        Title: <input type="search" name="SearchString" />
+        <input type="submit" value="Filter" />
+    </p>
+</form>
+
+
+<div class="row row-cols-1 row-cols-md-3 g-4">
+    @foreach (var item in Model)
+    {
+        <div class="col">
+            <div class="card">
+                <img src="imagesPost/@Html.DisplayFor(modelItem => item.Image)" class="card-img-top"
+                    alt="@Html.DisplayFor(modelItem => item.Title)">
+                <div class="card-body">
+                    <h5 class="card-title">@Html.DisplayFor(modelItem => item.Title)</h5>
+                    <p class="card-text">@Html.DisplayFor(modelItem => item.Content)</p>
+                    <div class="d-flex">
+                        <img src="imagesProfile/avatar/@_context.Profiles.FirstOrDefault(u => u.UserId == item.UserId).ProfilePicture" alt=""
+                            class="rounded-circle me-md-2" style="width: 30px; height: 30px;">
+                        <p class="card-text">@Html.DisplayFor(modelItem => _context.Users.FirstOrDefault(u => u.Id == item.UserId).UserName)</p>
+                    </div>
+                    <p class="card-text"><small class="text-muted">Teacher: @Html.DisplayFor(modelItem =>
+                        item.Teacher)</small></p>
+                    <p class="card-text"><small class="text-muted">@Html.DisplayFor(modelItem => item.CreatedAt)</small>
+                    </p>
+                </div>
+            </div>
+        </div>
+    }
+    @if (Model.Count() == 0)
+    {
+        <p>No data found</p>
+    }
+</div>
+
+@{
+    var prevDisabled = !Model.HasPreviousPage ? "disabled" : "";
+    var nextDisabled = !Model.HasNextPage ? "disabled" : "";
+}
+<div class="mt-5 justify-content-center d-flex ">
+    <a asp-action="Index" asp-route-pageNumber="@(Model.PageIndex - 1)" class="btn btn-primary m-2 @prevDisabled">
+        Previous
+    </a>
+
+    <a asp-action="Index" asp-route-pageNumber="@(Model.PageIndex + 1)" class="btn btn-primary m-2 @nextDisabled">
+        Next
+    </a>
+</div>
