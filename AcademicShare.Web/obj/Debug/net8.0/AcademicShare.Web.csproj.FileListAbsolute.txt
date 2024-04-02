@@ -267,3 +267,4 @@ C:\Users\lusto\OneDrive\EstudosDeProgramação\Estudos\AcademicShare.Web\Academi
 C:\Users\lusto\OneDrive\EstudosDeProgramação\Estudos\AcademicShare.Web\AcademicShare.Web\obj\Debug\net8.0\AcademicShare.Web.genruntimeconfig.cache
 C:\Users\lusto\OneDrive\EstudosDeProgramação\Estudos\AcademicShare.Web\AcademicShare.Web\obj\Debug\net8.0\ref\AcademicShare.Web.dll
 C:\Users\lusto\OneDrive\EstudosDeProgramação\Estudos\AcademicShare.Web\AcademicShare.Web\bin\Debug\net8.0\AutoMapper.dll
+C:\Users\lusto\OneDrive\EstudosDeProgramação\Estudos\AcademicShare.Web\AcademicShare.Web\obj\Debug\net8.0\AcademicShare.Web.sourcelink.json
