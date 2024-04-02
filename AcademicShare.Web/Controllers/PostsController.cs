@@ -53,6 +53,8 @@ public class PostsController : Controller
         if (!string.IsNullOrEmpty(searchString))
             posts = posts.Where(s => s.Title!.Contains(searchString));
 
+        ViewBag.User = await _context.Users.FirstOrDefaultAsync(p => p.Id == _userManager.GetUserId(User));
+
         int pageSize = 9;
         return View(await PaginatedList<Post>.CreateAsync(posts.AsNoTracking(), pageNumber ?? 1, pageSize));
     }

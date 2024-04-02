@@ -1,7 +1,9 @@
 using AcademicShare.Web.Context;
 using AcademicShare.Web.Models;
 using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -46,7 +48,7 @@ public class ProfileController : Controller
         return View(profile);
     }
 
-    [HttpPost]
+    [HttpPost("Profile/{UserName}")]
     public async Task<IActionResult> Index(
         UserProfile profile)
     {
@@ -91,6 +93,20 @@ public class ProfileController : Controller
 
         return View(profile);
     }
+
+    [HttpGet("Profile/{UserName}/Edit")]
+    public async Task<IActionResult> Edit(string? UserName)
+    {
+        var user = await _context.Users.FirstOrDefaultAsync(m => m.UserName!.Equals(UserName));
+        if (user is null) return NotFound();
+
+        var profile = await _context.Profiles.FirstOrDefaultAsync(p => p.UserId == user.Id);
+        if (profile is null) return NotFound();
+        ViewBag.User = user;
+        return View(user);
+    }
+
+    [HttpGet]
 
     public async Task<string> CreateFile(
         IFormFile file, 

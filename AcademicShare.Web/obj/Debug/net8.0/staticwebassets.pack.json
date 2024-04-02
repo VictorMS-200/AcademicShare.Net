@@ -5,6 +5,10 @@
       "PackagePath": "staticwebassets\\AcademicShare.Web.bundle.scp.css"
     },
     {
+      "Id": "C:\\Users\\lusto\\OneDrive\\EstudosDeProgramação\\Estudos\\AcademicShare.Web\\AcademicShare.Web\\wwwroot\\css\\Posts.css",
+      "PackagePath": "staticwebassets\\css\\Posts.css"
+    },
+    {
       "Id": "C:\\Users\\lusto\\OneDrive\\EstudosDeProgramação\\Estudos\\AcademicShare.Web\\AcademicShare.Web\\wwwroot\\css\\Profile.css",
       "PackagePath": "staticwebassets\\css\\Profile.css"
     },
@@ -67,6 +71,10 @@
     {
       "Id": "C:\\Users\\lusto\\OneDrive\\EstudosDeProgramação\\Estudos\\AcademicShare.Web\\AcademicShare.Web\\wwwroot\\imagesPost\\644beec9-bba6-4881-970e-2063865b207b_461216-desk-work-3150512634.jpg",
       "PackagePath": "staticwebassets\\imagesPost\\644beec9-bba6-4881-970e-2063865b207b_461216-desk-work-3150512634.jpg"
+    },
+    {
+      "Id": "C:\\Users\\lusto\\OneDrive\\EstudosDeProgramação\\Estudos\\AcademicShare.Web\\AcademicShare.Web\\wwwroot\\imagesPost\\70d3d524-d82a-4ce9-a1ec-805bb731746a_268543-3078984699.jpg",
+      "PackagePath": "staticwebassets\\imagesPost\\70d3d524-d82a-4ce9-a1ec-805bb731746a_268543-3078984699.jpg"
     },
     {
       "Id": "C:\\Users\\lusto\\OneDrive\\EstudosDeProgramação\\Estudos\\AcademicShare.Web\\AcademicShare.Web\\wwwroot\\imagesPost\\77685525-7f75-497d-be45-acad117679c7_4ee34739a37d0775fbeb88efac04b47c.jpg",
@@ -133,16 +141,16 @@
       "PackagePath": "staticwebassets\\imagesPost\\fb63d77e-115b-4562-91ba-d9649a23af81_Screenshot_2.png"
     },
     {
+      "Id": "C:\\Users\\lusto\\OneDrive\\EstudosDeProgramação\\Estudos\\AcademicShare.Web\\AcademicShare.Web\\wwwroot\\imagesProfile\\avatar\\40048b99-48d1-455f-806f-97f585f3ce67_defaultAvata.png",
+      "PackagePath": "staticwebassets\\imagesProfile\\avatar\\40048b99-48d1-455f-806f-97f585f3ce67_defaultAvata.png"
+    },
+    {
       "Id": "C:\\Users\\lusto\\OneDrive\\EstudosDeProgramação\\Estudos\\AcademicShare.Web\\AcademicShare.Web\\wwwroot\\imagesProfile\\avatar\\ae88c1ad-c2a7-4d62-a473-6477dfcbed49_Eren_Yeager_character_image_850.png",
       "PackagePath": "staticwebassets\\imagesProfile\\avatar\\ae88c1ad-c2a7-4d62-a473-6477dfcbed49_Eren_Yeager_character_image_850.png"
     },
     {
       "Id": "C:\\Users\\lusto\\OneDrive\\EstudosDeProgramação\\Estudos\\AcademicShare.Web\\AcademicShare.Web\\wwwroot\\imagesProfile\\avatar\\default.png",
       "PackagePath": "staticwebassets\\imagesProfile\\avatar\\default.png"
-    },
-    {
-      "Id": "C:\\Users\\lusto\\OneDrive\\EstudosDeProgramação\\Estudos\\AcademicShare.Web\\AcademicShare.Web\\wwwroot\\imagesProfile\\avatar\\fb2fb3e6-7d91-4eba-81aa-8cd953ba6ac2_Eren_Yeager_character_image_850.png",
-      "PackagePath": "staticwebassets\\imagesProfile\\avatar\\fb2fb3e6-7d91-4eba-81aa-8cd953ba6ac2_Eren_Yeager_character_image_850.png"
     },
     {
       "Id": "C:\\Users\\lusto\\OneDrive\\EstudosDeProgramação\\Estudos\\AcademicShare.Web\\AcademicShare.Web\\wwwroot\\imagesProfile\\banner\\1d8ad1a3-3979-4106-8728-27ddf1075df0_994479.png",
@@ -163,14 +171,6 @@
     {
       "Id": "C:\\Users\\lusto\\OneDrive\\EstudosDeProgramação\\Estudos\\AcademicShare.Web\\AcademicShare.Web\\wwwroot\\imagesProfile\\banner\\default.png",
       "PackagePath": "staticwebassets\\imagesProfile\\banner\\default.png"
-    },
-    {
-      "Id": "C:\\Users\\lusto\\OneDrive\\EstudosDeProgramação\\Estudos\\AcademicShare.Web\\AcademicShare.Web\\wwwroot\\imagesSite\\logo (1).svg",
-      "PackagePath": "staticwebassets\\imagesSite\\logo (1).svg"
-    },
-    {
-      "Id": "C:\\Users\\lusto\\OneDrive\\EstudosDeProgramação\\Estudos\\AcademicShare.Web\\AcademicShare.Web\\wwwroot\\imagesSite\\logo (2).svg",
-      "PackagePath": "staticwebassets\\imagesSite\\logo (2).svg"
     },
     {
       "Id": "C:\\Users\\lusto\\OneDrive\\EstudosDeProgramação\\Estudos\\AcademicShare.Web\\AcademicShare.Web\\wwwroot\\imagesSite\\logo.svg",
