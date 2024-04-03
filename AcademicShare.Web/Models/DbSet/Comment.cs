@@ -1,7 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using AcademicShare.Web.Models;
 
-namespace AcademicShare.Web.Models;
+namespace AcademicShare.Web.Models.Dtos;
 
 public class Comment
 {

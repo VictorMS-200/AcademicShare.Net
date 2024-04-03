@@ -56,7 +56,7 @@ public class PostsController : Controller
         ViewBag.User = await _context.Users.FirstOrDefaultAsync(p => p.Id == _userManager.GetUserId(User));
 
         int pageSize = 9;
-        return View(await PaginatedList<Post>.CreateAsync(posts.AsNoTracking(), pageNumber ?? 1, pageSize));
+        return View(await PaginatedList<Post>.CreateAsync(posts.OrderByDescending(c => c.CreatedAt).AsNoTracking(), pageNumber ?? 1, pageSize));
     }
 
     // GET: Posts/Details/5

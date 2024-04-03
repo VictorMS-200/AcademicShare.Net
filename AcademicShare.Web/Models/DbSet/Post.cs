@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
 
-namespace AcademicShare.Web.Models;
+namespace AcademicShare.Web.Models.Dtos;
 
 public class Post
 {
@@ -18,4 +18,5 @@ public class Post
 	public string? UserId { get; set; }
     public virtual User? User { get; set; }
     public virtual ICollection<Comment> Comments { get; set; } = new List<Comment>();
+    public virtual ICollection<Like> Likes { get; set; } = new List<Like>();
 }

@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using Microsoft.AspNetCore.Identity;
 
-namespace AcademicShare.Web.Models;
+namespace AcademicShare.Web.Models.Dtos;
 
 
 public class User : IdentityUser
@@ -17,6 +17,7 @@ public class User : IdentityUser
     public virtual UserProfile? Profile { get; set; }
 	public ICollection<Comment> Comments { get; set; } = new List<Comment>();
 	public ICollection<Post> Posts { get; set; } = new List<Post>();
+	public ICollection<Like> Likes { get; set; } = new List<Like>();
 	public DateTime CreateAt { get; set; }
 	public DateTime UpdateAt { get; set; }
 	public bool IsTeacher { get; set; }

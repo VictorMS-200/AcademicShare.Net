@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace AcademicShare.Web.Migrations
 {
     [DbContext(typeof(AcademicShareDbContext))]
-    [Migration("20240401043115_SecondMigration")]
-    partial class SecondMigration
+    [Migration("20240403234440_InitialMigration")]
+    partial class InitialMigration
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -25,7 +25,7 @@ namespace AcademicShare.Web.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("AcademicShare.Web.Models.Comment", b =>
+            modelBuilder.Entity("AcademicShare.Web.Models.Dtos.Comment", b =>
                 {
                     b.Property<int>("CommentId")
                         .ValueGeneratedOnAdd()
@@ -60,7 +60,36 @@ namespace AcademicShare.Web.Migrations
                     b.ToTable("Comments");
                 });
 
-            modelBuilder.Entity("AcademicShare.Web.Models.Post", b =>
+            modelBuilder.Entity("AcademicShare.Web.Models.Dtos.Like", b =>
+                {
+                    b.Property<int>("LikeId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("LikeId"));
+
+                    b.Property<int?>("PostId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("PostLikeId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("UserId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("UserLikeId")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("LikeId");
+
+                    b.HasIndex("PostId");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("Likes");
+                });
+
+            modelBuilder.Entity("AcademicShare.Web.Models.Dtos.Post", b =>
                 {
                     b.Property<int>("PostId")
                         .ValueGeneratedOnAdd()
@@ -102,7 +131,7 @@ namespace AcademicShare.Web.Migrations
                     b.ToTable("Posts");
                 });
 
-            modelBuilder.Entity("AcademicShare.Web.Models.User", b =>
+            modelBuilder.Entity("AcademicShare.Web.Models.Dtos.User", b =>
                 {
                     b.Property<string>("Id")
                         .HasColumnType("nvarchar(450)");
@@ -196,7 +225,7 @@ namespace AcademicShare.Web.Migrations
                     b.ToTable("AspNetUsers", (string)null);
                 });
 
-            modelBuilder.Entity("AcademicShare.Web.Models.UserProfile", b =>
+            modelBuilder.Entity("AcademicShare.Web.Models.Dtos.UserProfile", b =>
                 {
                     b.Property<int>("UserProfileId")
                         .ValueGeneratedOnAdd()
@@ -220,9 +249,11 @@ namespace AcademicShare.Web.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("ProfilePicture")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("UserId")
+                        .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Website")
@@ -231,8 +262,7 @@ namespace AcademicShare.Web.Migrations
                     b.HasKey("UserProfileId");
 
                     b.HasIndex("UserId")
-                        .IsUnique()
-                        .HasFilter("[UserId] IS NOT NULL");
+                        .IsUnique();
 
                     b.ToTable("Profiles");
                 });
@@ -370,14 +400,14 @@ namespace AcademicShare.Web.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
-            modelBuilder.Entity("AcademicShare.Web.Models.Comment", b =>
+            modelBuilder.Entity("AcademicShare.Web.Models.Dtos.Comment", b =>
                 {
-                    b.HasOne("AcademicShare.Web.Models.Post", "Post")
+                    b.HasOne("AcademicShare.Web.Models.Dtos.Post", "Post")
                         .WithMany("Comments")
                         .HasForeignKey("PostId")
                         .OnDelete(DeleteBehavior.Cascade);
 
-                    b.HasOne("AcademicShare.Web.Models.User", "User")
+                    b.HasOne("AcademicShare.Web.Models.Dtos.User", "User")
                         .WithMany("Comments")
                         .HasForeignKey("UserId");
 
@@ -386,9 +416,25 @@ namespace AcademicShare.Web.Migrations
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("AcademicShare.Web.Models.Post", b =>
+            modelBuilder.Entity("AcademicShare.Web.Models.Dtos.Like", b =>
                 {
-                    b.HasOne("AcademicShare.Web.Models.User", "User")
+                    b.HasOne("AcademicShare.Web.Models.Dtos.Post", "Post")
+                        .WithMany("Likes")
+                        .HasForeignKey("PostId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("AcademicShare.Web.Models.Dtos.User", "User")
+                        .WithMany("Likes")
+                        .HasForeignKey("UserId");
+
+                    b.Navigation("Post");
+
+                    b.Navigation("User");
+                });
+
+            modelBuilder.Entity("AcademicShare.Web.Models.Dtos.Post", b =>
+                {
+                    b.HasOne("AcademicShare.Web.Models.Dtos.User", "User")
                         .WithMany("Posts")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade);
@@ -396,12 +442,13 @@ namespace AcademicShare.Web.Migrations
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("AcademicShare.Web.Models.UserProfile", b =>
+            modelBuilder.Entity("AcademicShare.Web.Models.Dtos.UserProfile", b =>
                 {
-                    b.HasOne("AcademicShare.Web.Models.User", "User")
+                    b.HasOne("AcademicShare.Web.Models.Dtos.User", "User")
                         .WithOne("Profile")
-                        .HasForeignKey("AcademicShare.Web.Models.UserProfile", "UserId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .HasForeignKey("AcademicShare.Web.Models.Dtos.UserProfile", "UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("User");
                 });
@@ -417,7 +464,7 @@ namespace AcademicShare.Web.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
                 {
-                    b.HasOne("AcademicShare.Web.Models.User", null)
+                    b.HasOne("AcademicShare.Web.Models.Dtos.User", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -426,7 +473,7 @@ namespace AcademicShare.Web.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<string>", b =>
                 {
-                    b.HasOne("AcademicShare.Web.Models.User", null)
+                    b.HasOne("AcademicShare.Web.Models.Dtos.User", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -441,7 +488,7 @@ namespace AcademicShare.Web.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("AcademicShare.Web.Models.User", null)
+                    b.HasOne("AcademicShare.Web.Models.Dtos.User", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -450,21 +497,25 @@ namespace AcademicShare.Web.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>
                 {
-                    b.HasOne("AcademicShare.Web.Models.User", null)
+                    b.HasOne("AcademicShare.Web.Models.Dtos.User", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("AcademicShare.Web.Models.Post", b =>
+            modelBuilder.Entity("AcademicShare.Web.Models.Dtos.Post", b =>
                 {
                     b.Navigation("Comments");
+
+                    b.Navigation("Likes");
                 });
 
-            modelBuilder.Entity("AcademicShare.Web.Models.User", b =>
+            modelBuilder.Entity("AcademicShare.Web.Models.Dtos.User", b =>
                 {
                     b.Navigation("Comments");
+
+                    b.Navigation("Likes");
 
                     b.Navigation("Posts");
 

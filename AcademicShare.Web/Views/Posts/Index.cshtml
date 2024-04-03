@@ -1,6 +1,8 @@
-﻿@model PaginatedList<AcademicShare.Web.Models.Post>
-@inject AcademicShareDbContext _context
+﻿@model PaginatedList<Post>
+
 @using Microsoft.AspNetCore.Identity
+
+@inject AcademicShareDbContext _context
 @inject SignInManager<User> SignInManager
 
 @{

@@ -1,15 +1,15 @@
 using System.Text.Json.Serialization;
 using AcademicShare.Web.Context;
-using AcademicShare.Web.Models;
+using AcademicShare.Web.Models.Dtos;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
+
 var builder = WebApplication.CreateBuilder(args);
 
+var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 
 builder.Services.AddControllersWithViews();
-
-var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 

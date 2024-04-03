@@ -48,6 +48,7 @@ public class ProfileController : Controller
     [HttpPost("Profile/{UserName}")]
     [ValidateAntiForgeryToken]
     public async Task<IActionResult> Index(
+        [Bind("Profile")]
         ViewProfileDto UserProfile)
     {
         Console.WriteLine(UserProfile.Profile.Banner + " fsdfsdf");

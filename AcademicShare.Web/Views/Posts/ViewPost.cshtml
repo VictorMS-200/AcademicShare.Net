@@ -8,8 +8,7 @@
 @{
     ViewBag.Title = "Post";
     var user = _context.Users.Find(Model.UserId);
-    var ListComment = await _context.Comments.Where(c => c.PostCommentId == Model.PostId).OrderByDescending(c =>
-    c.CreatedAt).ToListAsync();
+    var ListComment = await _context.Comments.Where(c => c.PostCommentId == Model.PostId).OrderByDescending(c => c.CreatedAt).ToListAsync();
 }
 @section Styles {
     <link rel="stylesheet" href="~/css/Posts.css">
