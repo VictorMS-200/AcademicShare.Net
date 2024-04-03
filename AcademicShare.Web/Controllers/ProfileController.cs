@@ -1,9 +1,7 @@
 using AcademicShare.Web.Context;
 using AcademicShare.Web.Models;
 using AutoMapper;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -49,6 +47,7 @@ public class ProfileController : Controller
     }
 
     [HttpPost("Profile/{UserName}")]
+    [ValidateAntiForgeryToken]
     public async Task<IActionResult> Index(
         UserProfile profile)
     {
@@ -105,8 +104,6 @@ public class ProfileController : Controller
         ViewBag.User = user;
         return View(user);
     }
-
-    [HttpGet]
 
     public async Task<string> CreateFile(
         IFormFile file, 

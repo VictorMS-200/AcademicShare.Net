@@ -4,7 +4,6 @@ using AcademicShare.Web.Context;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using AcademicShare.Web.Models;
-using System;
 using AcademicShare.Web.Models.Dtos;
 using AutoMapper;
 using AcademicShare.Web.Models.Paginated;
@@ -45,6 +44,7 @@ public class PostsController : Controller
         {
             pageNumber = 1;
         }
+
         if (_context.Posts == null) return Problem("Entity set is null.");
 
         var posts = from m in _context.Posts
@@ -153,8 +153,8 @@ public class PostsController : Controller
     {
         if (id == null) NotFound();
 
-        var post = await _context.Posts
-            .FirstOrDefaultAsync(m => m.PostId == id);
+        var post = await _context.Posts.FirstOrDefaultAsync(m => m.PostId == id);
+
         if (post == null) NotFound();
 
         return View(post);
@@ -171,6 +171,44 @@ public class PostsController : Controller
 
         await _context.SaveChangesAsync();
         return RedirectToAction(nameof(Index));
+    }
+
+    [HttpGet]
+    public async Task<IActionResult> ViewPost(int id)
+    {
+        if (id == 0) return NotFound();
+        
+        var post = await _context.Posts.FindAsync(id);
+
+
+        if (post == null) return NotFound();
+        ViewPostDto postView = _mapper.Map<Post, ViewPostDto>(post);
+        return View(postView);
+    }
+    [HttpPost]
+    [ValidateAntiForgeryToken]
+    public async Task<IActionResult> ViewPost(
+        [Bind(include: "CommentContent,Id")]
+        ViewPostDto Postcomment)
+    {
+        if (Postcomment == null) return NotFound();
+        if (ModelState.IsValid)
+        {
+            
+            var user = await _context.Users.FirstOrDefaultAsync(u => u.Id == _userManager.GetUserId(User));
+            var Comment = new Comment
+            {
+                Content = Postcomment.CommentContent,
+                PostCommentId = Postcomment.Id,
+                UserCommentId = user!.Id,
+                CreatedAt = DateTime.Now,
+                
+            };
+            _context.Comments.Add(Comment);
+            await _context.SaveChangesAsync();
+            return RedirectToAction("ViewPost", new { id = Postcomment.Id });
+        }
+        return View(Postcomment);
     }
 
     private bool PostExists(int id) => _context.Posts.Any(e => e.PostId == id);

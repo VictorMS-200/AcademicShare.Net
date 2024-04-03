@@ -57,6 +57,10 @@
       "PackagePath": "staticwebassets\\imagesPost\\37ada691-adda-4ce9-9286-81652f4f102b_1691916-182849334.jpg"
     },
     {
+      "Id": "C:\\Users\\lusto\\OneDrive\\EstudosDeProgramação\\Estudos\\AcademicShare.Web\\AcademicShare.Web\\wwwroot\\imagesPost\\42bae460-c0fb-446a-946c-e0e63e740a24_Ewr7fYJUYAAVq9F.jpg",
+      "PackagePath": "staticwebassets\\imagesPost\\42bae460-c0fb-446a-946c-e0e63e740a24_Ewr7fYJUYAAVq9F.jpg"
+    },
+    {
       "Id": "C:\\Users\\lusto\\OneDrive\\EstudosDeProgramação\\Estudos\\AcademicShare.Web\\AcademicShare.Web\\wwwroot\\imagesPost\\4d6aa70f-2e1e-479b-9026-ebe17ab773d8_Screenshot_1.png",
       "PackagePath": "staticwebassets\\imagesPost\\4d6aa70f-2e1e-479b-9026-ebe17ab773d8_Screenshot_1.png"
     },
@@ -141,8 +145,12 @@
       "PackagePath": "staticwebassets\\imagesPost\\fb63d77e-115b-4562-91ba-d9649a23af81_Screenshot_2.png"
     },
     {
-      "Id": "C:\\Users\\lusto\\OneDrive\\EstudosDeProgramação\\Estudos\\AcademicShare.Web\\AcademicShare.Web\\wwwroot\\imagesProfile\\avatar\\40048b99-48d1-455f-806f-97f585f3ce67_defaultAvata.png",
-      "PackagePath": "staticwebassets\\imagesProfile\\avatar\\40048b99-48d1-455f-806f-97f585f3ce67_defaultAvata.png"
+      "Id": "C:\\Users\\lusto\\OneDrive\\EstudosDeProgramação\\Estudos\\AcademicShare.Web\\AcademicShare.Web\\wwwroot\\imagesProfile\\avatar\\0683b816-5c53-465f-a820-e3a78b6353e0_Eren_Yeager_character_image_850.png",
+      "PackagePath": "staticwebassets\\imagesProfile\\avatar\\0683b816-5c53-465f-a820-e3a78b6353e0_Eren_Yeager_character_image_850.png"
+    },
+    {
+      "Id": "C:\\Users\\lusto\\OneDrive\\EstudosDeProgramação\\Estudos\\AcademicShare.Web\\AcademicShare.Web\\wwwroot\\imagesProfile\\avatar\\57bf4bfd-45fa-4947-801a-ffc2170e29a3_Screenshot_2.png",
+      "PackagePath": "staticwebassets\\imagesProfile\\avatar\\57bf4bfd-45fa-4947-801a-ffc2170e29a3_Screenshot_2.png"
     },
     {
       "Id": "C:\\Users\\lusto\\OneDrive\\EstudosDeProgramação\\Estudos\\AcademicShare.Web\\AcademicShare.Web\\wwwroot\\imagesProfile\\avatar\\ae88c1ad-c2a7-4d62-a473-6477dfcbed49_Eren_Yeager_character_image_850.png",

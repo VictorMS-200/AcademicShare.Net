@@ -26,9 +26,25 @@ public class AutoMapperProfiles : Profile
             .ForMember(dest => dest.CreateAt, opt => opt.MapFrom(src => DateTime.Now))
             .ForMember(dest => dest.EmailConfirmed, opt => opt.MapFrom(src => true))
             .ForMember(dest => dest.Profile, opt => opt.MapFrom(src => new UserProfile { Bio = "Hello World!", ProfilePicture = "default.png", Banner = "default.png" }))
+            .ForMember(dest => dest.Posts, opt => opt.MapFrom(src => new List<Post>()))
+            .ForMember(dest => dest.Comments, opt => opt.MapFrom(src => new List<Comment>()))
             .ReverseMap();
 
         CreateMap<Post, GetPostDto>()
+            .ReverseMap();
+            
+        
+        CreateMap<Post, ViewPostDto>()
+            .ForMember(dest => dest.UserId, opt => opt.MapFrom(src => src.UserId))
+            .ForMember(dest => dest.Title, opt => opt.MapFrom(src => src.Title))
+            .ForMember(dest => dest.Content, opt => opt.MapFrom(src => src.Content))
+            .ForMember(dest => dest.Image, opt => opt.MapFrom(src => src.Image))
+            .ForMember(dest => dest.CommentContent, opt => opt.MapFrom(src => src.Comments.FirstOrDefault()!.Content))
+            .ForMember(dest => dest.CommentUserId, opt => opt.MapFrom(src => src.Comments.FirstOrDefault()!.User))
+            .ForMember(dest => dest.Comment, opt => opt.MapFrom(src => src.Comments.FirstOrDefault()))
+            .ForMember(dest => dest.CreatedAt, opt => opt.MapFrom(src => src.CreatedAt))
+            .ForMember(dest => dest.Id, opt => opt.MapFrom(src => src.PostId))
+            .ForMember(dest => dest.Comments, opt => opt.MapFrom(src => src.Comments))
             .ReverseMap();
     }
 }

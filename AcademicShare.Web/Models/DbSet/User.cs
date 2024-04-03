@@ -14,7 +14,6 @@ public class User : IdentityUser
 	public string Course { get; set; } = string.Empty;
 	public string Image { get; set; } = string.Empty;
 	public string ProfileId { get; set; } = string.Empty;
-	
     public virtual UserProfile? Profile { get; set; }
 	public ICollection<Comment> Comments { get; set; } = new List<Comment>();
 	public ICollection<Post> Posts { get; set; } = new List<Post>();

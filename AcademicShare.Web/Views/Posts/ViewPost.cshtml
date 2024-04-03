@@ -1,0 +1,86 @@
+@model ViewPostDto
+@using Microsoft.AspNetCore.Identity
+@using Microsoft.EntityFrameworkCore
+@inject AcademicShareDbContext _context
+
+@{
+    ViewBag.Title = "Post";
+    var user = _context.Users.Find(Model.UserId);
+    var ListComment = await _context.Comments.Where(c => c.PostCommentId == Model.Id).OrderByDescending(c =>
+    c.CreatedAt).ToListAsync();
+}
+@section Styles {
+    <link rel="stylesheet" href="~/css/Posts.css">
+}
+
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 offset-md-2">
+            <h1 class="display-4">@Html.DisplayFor(modelItem => Model.Title)</h1>
+            <img src="/imagesPost/@Html.DisplayFor(modelItem => Model.Image)" class="rounded-bottom w-100"
+                alt="@Html.DisplayFor(modelItem => Model.Title)">
+            <div class="d-flex justify-content-start rounded my-2 p-0" style="background-color: rgb(212, 233, 252);">
+                <div class="w-50 my-3 d-inline-flex m-4">
+                    <img src="/imagesProfile/avatar/@_context.Profiles.FirstOrDefault(u => u.UserId == Model.UserId).ProfilePicture"
+                        alt="" class="rounded-circle me-2" style="width: 55px; height: 55px; object-fit: cover;">
+                    <div class="align-content-center">
+                        <p class="card-text mx-1 mb-0" style="font-size: large;">
+                            @Html.DisplayFor(modelItem => _context.Profiles.FirstOrDefault(u => u.UserId ==
+                                     Model.UserId).FullName)
+                        </p>
+                        <p class="card-text mx-1 mb-0 text-muted" style="font-size: medium;">
+                            #@Html.DisplayFor(modelItem => _context.Users.FirstOrDefault(u => u.Id ==
+                                    Model.UserId).UserName)
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <p>@Html.DisplayFor(modelItem => Model.Content)</p>
+            <p class="text-muted">Posted on: @Html.DisplayFor(modelItem => Model.CreatedAt)</p>
+            <hr>
+            <Form asp-action="ViewPost" method="post">
+                <div class="mb-3">
+                    <label asp-for="@Model.CommentContent" class="form-label">Comment in the post:</label>
+                    <textarea asp-for="@Model.CommentContent" class="form-control" rows="3"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </Form>
+            @if (ListComment != null)
+            {
+                foreach (var comment in ListComment)
+                {
+                    <div class="col rounded my-3 p-2" style="background-color: rgb(242, 246, 248);">
+                        <div class="d-inline-flex w-100 m-auto">
+                            <div class="w-100 my-3 d-inline-flex m-4">
+                                <img src="/imagesProfile/avatar/@_context.Profiles.FirstOrDefault(u => u.UserId == comment.UserCommentId).ProfilePicture"
+                                    alt="/imagesProfile/avatar/@_context.Profiles.FirstOrDefault(u => u.UserId == comment.UserCommentId).ProfilePicture" class="rounded-circle me-2" style="width: 55px; height: 55px; object-fit: cover;">
+                                <div class="align-content-center">
+                                    <p class="card-text mx-1 mb-0" style="font-size: large;">
+                                        @Html.DisplayFor(modelItem => _context.Profiles.FirstOrDefault(u => u.UserId ==
+                                                 comment.UserCommentId).FullName)
+                                    </p>
+                                    <p class="card-text mx-1 mb-0 text-muted" style="font-size: medium;">
+                                        #@Html.DisplayFor(modelItem => _context.Users.FirstOrDefault(u => u.Id ==
+                                                comment.UserCommentId).UserName)
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mx-5">
+                            <p class="mx-5 pb-4 text-muted">@comment.Content</p>
+                            <p class="text-muted mx-5 mb-5">Posted on: @comment.CreatedAt</p>
+                        </div>
+                    </div>
+                }
+            }
+            else
+            {
+
+            }
+        </div>
+
+
+    </div>
+</div>

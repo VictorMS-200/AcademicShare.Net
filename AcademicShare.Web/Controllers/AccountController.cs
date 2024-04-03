@@ -30,6 +30,7 @@ public class AccountController : Controller
 	}
 
 	[HttpPost]
+	[ValidateAntiForgeryToken]
 	public async Task<IActionResult> Register(
 		[Bind(include: "Email,FullName,UserName,University,Course,Registration,Password,ConfirmPassword")]
 		CreateUserDto model)
@@ -70,6 +71,7 @@ public class AccountController : Controller
 	}
 
 	[HttpPost]
+	[ValidateAntiForgeryToken]
 	public async Task<IActionResult> Login(
 		UserLoginDto model)
 	{
@@ -95,7 +97,6 @@ public class AccountController : Controller
 
 		return View(model);
 	}
-
 	public async Task<IActionResult> Logout()
 	{
 		await _signInManager.SignOutAsync();

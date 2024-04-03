@@ -224,6 +224,22 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\imagesPost\37ada691-adda-4ce9-9286-81652f4f102b_1691916-182849334.jpg))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\imagesPost\42bae460-c0fb-446a-946c-e0e63e740a24_Ewr7fYJUYAAVq9F.jpg))">
+      <SourceType>Package</SourceType>
+      <SourceId>AcademicShare.Web</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/AcademicShare.Web</BasePath>
+      <RelativePath>imagesPost/42bae460-c0fb-446a-946c-e0e63e740a24_Ewr7fYJUYAAVq9F.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\imagesPost\42bae460-c0fb-446a-946c-e0e63e740a24_Ewr7fYJUYAAVq9F.jpg))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\imagesPost\4d6aa70f-2e1e-479b-9026-ebe17ab773d8_Screenshot_1.png))">
       <SourceType>Package</SourceType>
       <SourceId>AcademicShare.Web</SourceId>
@@ -560,12 +576,12 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\imagesPost\fb63d77e-115b-4562-91ba-d9649a23af81_Screenshot_2.png))</OriginalItemSpec>
     </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\imagesProfile\avatar\40048b99-48d1-455f-806f-97f585f3ce67_defaultAvata.png))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\imagesProfile\avatar\0683b816-5c53-465f-a820-e3a78b6353e0_Eren_Yeager_character_image_850.png))">
       <SourceType>Package</SourceType>
       <SourceId>AcademicShare.Web</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
       <BasePath>_content/AcademicShare.Web</BasePath>
-      <RelativePath>imagesProfile/avatar/40048b99-48d1-455f-806f-97f585f3ce67_defaultAvata.png</RelativePath>
+      <RelativePath>imagesProfile/avatar/0683b816-5c53-465f-a820-e3a78b6353e0_Eren_Yeager_character_image_850.png</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
       <AssetRole>Primary</AssetRole>
@@ -574,7 +590,23 @@
       <AssetTraitValue></AssetTraitValue>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\imagesProfile\avatar\40048b99-48d1-455f-806f-97f585f3ce67_defaultAvata.png))</OriginalItemSpec>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\imagesProfile\avatar\0683b816-5c53-465f-a820-e3a78b6353e0_Eren_Yeager_character_image_850.png))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\imagesProfile\avatar\57bf4bfd-45fa-4947-801a-ffc2170e29a3_Screenshot_2.png))">
+      <SourceType>Package</SourceType>
+      <SourceId>AcademicShare.Web</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/AcademicShare.Web</BasePath>
+      <RelativePath>imagesProfile/avatar/57bf4bfd-45fa-4947-801a-ffc2170e29a3_Screenshot_2.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\imagesProfile\avatar\57bf4bfd-45fa-4947-801a-ffc2170e29a3_Screenshot_2.png))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\imagesProfile\avatar\ae88c1ad-c2a7-4d62-a473-6477dfcbed49_Eren_Yeager_character_image_850.png))">
       <SourceType>Package</SourceType>
