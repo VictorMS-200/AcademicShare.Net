@@ -48,23 +48,23 @@ public class ProfileController : Controller
     [HttpPost("Profile/{UserName}")]
     [ValidateAntiForgeryToken]
     public async Task<IActionResult> Index(
-        ViewProfileDto profile)
+        ViewProfileDto UserProfile)
     {
-        Console.WriteLine(profile.UserName + "dadsdasd");
+        Console.WriteLine(UserProfile.Profile.Banner + " fsdfsdf");
         if (ModelState.IsValid)
         {
             string fileNameBanner;
             string fileNameProfilePicture;
 
-            if (profile.Profile.BannerFile is not null)
-                fileNameBanner = await CreateFile(profile.Profile.BannerFile, "imagesProfile/banner");
+            if (UserProfile.Profile.BannerFile is not null)
+                fileNameBanner = await CreateFile(UserProfile.Profile.BannerFile, "imagesProfile/banner");
             else
-                fileNameBanner = profile.Profile.Banner!;
+                fileNameBanner = UserProfile.Profile.Banner!;
 
-            if (profile.Profile.ProfilePictureFile is not null)
-                fileNameProfilePicture = await CreateFile(profile.Profile.ProfilePictureFile, "imagesProfile/avatar");
+            if (UserProfile.Profile.ProfilePictureFile is not null)
+                fileNameProfilePicture = await CreateFile(UserProfile.Profile.ProfilePictureFile, "imagesProfile/avatar");
             else
-                fileNameProfilePicture = profile.Profile.ProfilePicture!;
+                fileNameProfilePicture = UserProfile.Profile.ProfilePicture!;
 
             var user = await _userManager.GetUserAsync(User);
             var profileToUpdate = await _context.Profiles.FirstOrDefaultAsync(p => p.UserId == user!.Id);
@@ -72,25 +72,24 @@ public class ProfileController : Controller
 
             DeleteFile(profileToUpdate!.Banner!, fileNameBanner, "banner");
             DeleteFile(profileToUpdate.ProfilePicture!, fileNameProfilePicture, "avatar");
-
-            profileToUpdate.Bio = profile.Profile.Bio;
-            profileToUpdate.Location = profile.Profile.Location;
-            profileToUpdate.Website = profile.Profile.Website;
+            
+            profileToUpdate.Bio = UserProfile.Profile.Bio;
+            profileToUpdate.Location = UserProfile.Profile.Location;
+            profileToUpdate.Website = UserProfile.Profile.Website;
             profileToUpdate.Banner = fileNameBanner;
             profileToUpdate.ProfilePicture = fileNameProfilePicture;
             profileToUpdate.UserId = user!.Id;
-            profileToUpdate.UserProfileId = profile.Profile.UserProfileId;
-            profileToUpdate.BirthDate = profile.Profile.BirthDate;
-            profileToUpdate.FullName = profile.Profile.FullName;
+            profileToUpdate.UserProfileId = UserProfile.Profile.UserProfileId;
+            profileToUpdate.BirthDate = UserProfile.Profile.BirthDate;
+            profileToUpdate.FullName = UserProfile.Profile.FullName;
 
-            Console.WriteLine(profileToUpdate.UserProfileId);
             _context.Update(profileToUpdate);
             await _context.SaveChangesAsync();
 
             return RedirectToAction("Index", new { UserName = user.UserName });
         }
 
-        return View(profile);
+        return View(UserProfile);
     }
 
     [HttpGet("Profile/{UserName}/Edit")]

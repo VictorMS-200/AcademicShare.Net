@@ -528,6 +528,22 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\imagesPost\ebb10c0f-fe49-4474-bf64-d62942ca991f_Screenshot_2.png))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\imagesPost\f0a7cb8f-b41e-4cf8-ad81-3a44f39604c3_Ewr7fYJUYAAVq9F.jpg))">
+      <SourceType>Package</SourceType>
+      <SourceId>AcademicShare.Web</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/AcademicShare.Web</BasePath>
+      <RelativePath>imagesPost/f0a7cb8f-b41e-4cf8-ad81-3a44f39604c3_Ewr7fYJUYAAVq9F.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\imagesPost\f0a7cb8f-b41e-4cf8-ad81-3a44f39604c3_Ewr7fYJUYAAVq9F.jpg))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\imagesPost\f1883c67-f0c3-4d0c-b8ac-b255febec694_461216-desk-work-3150512634.jpg))">
       <SourceType>Package</SourceType>
       <SourceId>AcademicShare.Web</SourceId>
@@ -656,12 +672,12 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\imagesProfile\banner\1d8ad1a3-3979-4106-8728-27ddf1075df0_994479.png))</OriginalItemSpec>
     </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\imagesProfile\banner\83ab36eb-d093-44d2-a773-9d6680f6da5c_img102.jpg))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\imagesProfile\banner\3fd6fe8e-763a-4058-89d1-eacaac54b1ab_Ewr7fYJUYAAVq9F.jpg))">
       <SourceType>Package</SourceType>
       <SourceId>AcademicShare.Web</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
       <BasePath>_content/AcademicShare.Web</BasePath>
-      <RelativePath>imagesProfile/banner/83ab36eb-d093-44d2-a773-9d6680f6da5c_img102.jpg</RelativePath>
+      <RelativePath>imagesProfile/banner/3fd6fe8e-763a-4058-89d1-eacaac54b1ab_Ewr7fYJUYAAVq9F.jpg</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
       <AssetRole>Primary</AssetRole>
@@ -670,7 +686,7 @@
       <AssetTraitValue></AssetTraitValue>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\imagesProfile\banner\83ab36eb-d093-44d2-a773-9d6680f6da5c_img102.jpg))</OriginalItemSpec>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\imagesProfile\banner\3fd6fe8e-763a-4058-89d1-eacaac54b1ab_Ewr7fYJUYAAVq9F.jpg))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\imagesProfile\banner\ac67fd10-bd5b-4b72-b668-55138ee38beb_7b72ace3824cfbdce17bf0737c49e4b3.jpg))">
       <SourceType>Package</SourceType>
@@ -719,6 +735,22 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\imagesProfile\banner\default.png))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\imagesProfile\banner\ee0628a6-26e8-476f-90ec-003dd6ad162b_Ewr7fYJUYAAVq9F.jpg))">
+      <SourceType>Package</SourceType>
+      <SourceId>AcademicShare.Web</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/AcademicShare.Web</BasePath>
+      <RelativePath>imagesProfile/banner/ee0628a6-26e8-476f-90ec-003dd6ad162b_Ewr7fYJUYAAVq9F.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\imagesProfile\banner\ee0628a6-26e8-476f-90ec-003dd6ad162b_Ewr7fYJUYAAVq9F.jpg))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\imagesSite\logo.svg))">
       <SourceType>Package</SourceType>

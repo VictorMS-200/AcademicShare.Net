@@ -73,13 +73,6 @@
     <h2 class="text-center">Totals Posts: @ViewBag.PostsCount</h2>
     <hr>
     <div class="row row-cols-1 row-cols-md-2 g-4">
-        @{
-            Console.WriteLine(PostList.Count);
-            foreach (var post in Model.Posts)
-            {
-                Console.WriteLine(post.Title + "asfasfasf");
-            }
-        }
         @foreach (var post in PostList)
         {
             <div class="col">

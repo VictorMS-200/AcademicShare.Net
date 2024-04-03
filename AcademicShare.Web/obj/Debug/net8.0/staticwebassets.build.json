@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "72M93X9jT/hd7Hn1PKqsA0A/HdLcReuQQ6tyTgeFAOw=",
+  "Hash": "eDQE8AeWq/ppqptvsnlmT0qffeaadsD3iqzpJMka2CQ=",
   "Source": "AcademicShare.Web",
   "BasePath": "_content/AcademicShare.Web",
   "Mode": "Default",
@@ -663,6 +663,25 @@
       "OriginalItemSpec": "wwwroot\\imagesPost\\ebb10c0f-fe49-4474-bf64-d62942ca991f_Screenshot_2.png"
     },
     {
+      "Identity": "C:\\Users\\lusto\\OneDrive\\EstudosDeProgramação\\Estudos\\AcademicShare.Web\\AcademicShare.Web\\wwwroot\\imagesPost\\f0a7cb8f-b41e-4cf8-ad81-3a44f39604c3_Ewr7fYJUYAAVq9F.jpg",
+      "SourceId": "AcademicShare.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\lusto\\OneDrive\\EstudosDeProgramação\\Estudos\\AcademicShare.Web\\AcademicShare.Web\\wwwroot\\",
+      "BasePath": "_content/AcademicShare.Web",
+      "RelativePath": "imagesPost/f0a7cb8f-b41e-4cf8-ad81-3a44f39604c3_Ewr7fYJUYAAVq9F.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\imagesPost\\f0a7cb8f-b41e-4cf8-ad81-3a44f39604c3_Ewr7fYJUYAAVq9F.jpg"
+    },
+    {
       "Identity": "C:\\Users\\lusto\\OneDrive\\EstudosDeProgramação\\Estudos\\AcademicShare.Web\\AcademicShare.Web\\wwwroot\\imagesPost\\f1883c67-f0c3-4d0c-b8ac-b255febec694_461216-desk-work-3150512634.jpg",
       "SourceId": "AcademicShare.Web",
       "SourceType": "Discovered",
@@ -815,12 +834,12 @@
       "OriginalItemSpec": "wwwroot\\imagesProfile\\banner\\1d8ad1a3-3979-4106-8728-27ddf1075df0_994479.png"
     },
     {
-      "Identity": "C:\\Users\\lusto\\OneDrive\\EstudosDeProgramação\\Estudos\\AcademicShare.Web\\AcademicShare.Web\\wwwroot\\imagesProfile\\banner\\83ab36eb-d093-44d2-a773-9d6680f6da5c_img102.jpg",
+      "Identity": "C:\\Users\\lusto\\OneDrive\\EstudosDeProgramação\\Estudos\\AcademicShare.Web\\AcademicShare.Web\\wwwroot\\imagesProfile\\banner\\3fd6fe8e-763a-4058-89d1-eacaac54b1ab_Ewr7fYJUYAAVq9F.jpg",
       "SourceId": "AcademicShare.Web",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\lusto\\OneDrive\\EstudosDeProgramação\\Estudos\\AcademicShare.Web\\AcademicShare.Web\\wwwroot\\",
       "BasePath": "_content/AcademicShare.Web",
-      "RelativePath": "imagesProfile/banner/83ab36eb-d093-44d2-a773-9d6680f6da5c_img102.jpg",
+      "RelativePath": "imagesProfile/banner/3fd6fe8e-763a-4058-89d1-eacaac54b1ab_Ewr7fYJUYAAVq9F.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -831,7 +850,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\imagesProfile\\banner\\83ab36eb-d093-44d2-a773-9d6680f6da5c_img102.jpg"
+      "OriginalItemSpec": "wwwroot\\imagesProfile\\banner\\3fd6fe8e-763a-4058-89d1-eacaac54b1ab_Ewr7fYJUYAAVq9F.jpg"
     },
     {
       "Identity": "C:\\Users\\lusto\\OneDrive\\EstudosDeProgramação\\Estudos\\AcademicShare.Web\\AcademicShare.Web\\wwwroot\\imagesProfile\\banner\\ac67fd10-bd5b-4b72-b668-55138ee38beb_7b72ace3824cfbdce17bf0737c49e4b3.jpg",
@@ -889,6 +908,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\imagesProfile\\banner\\default.png"
+    },
+    {
+      "Identity": "C:\\Users\\lusto\\OneDrive\\EstudosDeProgramação\\Estudos\\AcademicShare.Web\\AcademicShare.Web\\wwwroot\\imagesProfile\\banner\\ee0628a6-26e8-476f-90ec-003dd6ad162b_Ewr7fYJUYAAVq9F.jpg",
+      "SourceId": "AcademicShare.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\lusto\\OneDrive\\EstudosDeProgramação\\Estudos\\AcademicShare.Web\\AcademicShare.Web\\wwwroot\\",
+      "BasePath": "_content/AcademicShare.Web",
+      "RelativePath": "imagesProfile/banner/ee0628a6-26e8-476f-90ec-003dd6ad162b_Ewr7fYJUYAAVq9F.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\imagesProfile\\banner\\ee0628a6-26e8-476f-90ec-003dd6ad162b_Ewr7fYJUYAAVq9F.jpg"
     },
     {
       "Identity": "C:\\Users\\lusto\\OneDrive\\EstudosDeProgramação\\Estudos\\AcademicShare.Web\\AcademicShare.Web\\wwwroot\\imagesSite\\logo.svg",

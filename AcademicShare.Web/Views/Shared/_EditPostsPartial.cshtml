@@ -12,9 +12,10 @@
         <form method="post" asp-action="Index" enctype="multipart/form-data">
             <h2>Update your Profile</h2>
             <hr />
+
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
             <input type="hidden" asp-for="Profile.UserProfileId" />
-            <input type="hidden" asp-for="Profile.UserId" />
             <input type="hidden" asp-for="Profile.ProfilePicture" />
             <input type="hidden" asp-for="Profile.Banner" />
             <div class="form-floating mb-3">
@@ -41,6 +42,9 @@
                 <input asp-for="Profile.BirthDate" class="form-control" aria-required="true" type="date" />
                 <label asp-for="Profile.BirthDate" class="form-label">Date Of Birth</label>
                 <span asp-validation-for="Profile.BirthDate" class="text-danger"></span>
+            </div>
+            <div class="col-4">
+                <img src="htttps://placehold.js/150x150" id="PrevImg" class="img-thumbnail" style="width:100px;height:100px" />
             </div>
             <div class="mb-3">
                 <label asp-for="Profile.BannerFile" class="form-label">Banner</label>
