@@ -188,25 +188,25 @@ public class PostsController : Controller
     [HttpPost]
     [ValidateAntiForgeryToken]
     public async Task<IActionResult> ViewPost(
-        [Bind(include: "CommentContent,Id")]
+        [Bind(include: "CommentContent,Id,PostId")]
         ViewPostDto Postcomment)
     {
         if (Postcomment == null) return NotFound();
         if (ModelState.IsValid)
         {
-            
             var user = await _context.Users.FirstOrDefaultAsync(u => u.Id == _userManager.GetUserId(User));
             var Comment = new Comment
             {
                 Content = Postcomment.CommentContent,
-                PostCommentId = Postcomment.Id,
+                PostCommentId = Postcomment.PostId,
                 UserCommentId = user!.Id,
                 CreatedAt = DateTime.Now,
-                
             };
             _context.Comments.Add(Comment);
+
             await _context.SaveChangesAsync();
-            return RedirectToAction("ViewPost", new { id = Postcomment.Id });
+
+            return RedirectToAction("ViewPost", new { id = Postcomment.PostId });
         }
         return View(Postcomment);
     }

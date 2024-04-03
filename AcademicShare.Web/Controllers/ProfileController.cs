@@ -1,5 +1,6 @@
 using AcademicShare.Web.Context;
 using AcademicShare.Web.Models;
+using AcademicShare.Web.Models.Dtos;
 using AutoMapper;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -39,32 +40,31 @@ public class ProfileController : Controller
         var profile = await _context.Profiles.FirstOrDefaultAsync(p => p.UserId == user.Id);
         if (profile is null) return NotFound();
 
-        ViewBag.User = user;
-        ViewBag.PostsCount = await _context.Posts.Where(p => p.UserId == user.Id).CountAsync();
-        ViewBag.Posts = await _context.Posts.Where(p => p.UserId == user.Id).Take(6).OrderByDescending(p => p.CreatedAt).ToListAsync();
+        var viewProfile = _mapper.Map<ViewProfileDto>(user);
 
-        return View(profile);
+        return View(viewProfile);
     }
 
     [HttpPost("Profile/{UserName}")]
     [ValidateAntiForgeryToken]
     public async Task<IActionResult> Index(
-        UserProfile profile)
+        ViewProfileDto profile)
     {
+        Console.WriteLine(profile.UserName + "dadsdasd");
         if (ModelState.IsValid)
         {
             string fileNameBanner;
             string fileNameProfilePicture;
 
-            if (profile.BannerFile is not null)
-                fileNameBanner = await CreateFile(profile.BannerFile, "imagesProfile/banner");
+            if (profile.Profile.BannerFile is not null)
+                fileNameBanner = await CreateFile(profile.Profile.BannerFile, "imagesProfile/banner");
             else
-                fileNameBanner = profile.Banner!;
+                fileNameBanner = profile.Profile.Banner!;
 
-            if (profile.ProfilePictureFile is not null)
-                fileNameProfilePicture = await CreateFile(profile.ProfilePictureFile, "imagesProfile/avatar");
+            if (profile.Profile.ProfilePictureFile is not null)
+                fileNameProfilePicture = await CreateFile(profile.Profile.ProfilePictureFile, "imagesProfile/avatar");
             else
-                fileNameProfilePicture = profile.ProfilePicture!;
+                fileNameProfilePicture = profile.Profile.ProfilePicture!;
 
             var user = await _userManager.GetUserAsync(User);
             var profileToUpdate = await _context.Profiles.FirstOrDefaultAsync(p => p.UserId == user!.Id);
@@ -73,15 +73,15 @@ public class ProfileController : Controller
             DeleteFile(profileToUpdate!.Banner!, fileNameBanner, "banner");
             DeleteFile(profileToUpdate.ProfilePicture!, fileNameProfilePicture, "avatar");
 
-            profileToUpdate.Bio = profile.Bio;
-            profileToUpdate.Location = profile.Location;
-            profileToUpdate.Website = profile.Website;
+            profileToUpdate.Bio = profile.Profile.Bio;
+            profileToUpdate.Location = profile.Profile.Location;
+            profileToUpdate.Website = profile.Profile.Website;
             profileToUpdate.Banner = fileNameBanner;
             profileToUpdate.ProfilePicture = fileNameProfilePicture;
             profileToUpdate.UserId = user!.Id;
-            profileToUpdate.UserProfileId = profile.UserProfileId;
-            profileToUpdate.BirthDate = profile.BirthDate;
-            profileToUpdate.FullName = profile.FullName;
+            profileToUpdate.UserProfileId = profile.Profile.UserProfileId;
+            profileToUpdate.BirthDate = profile.Profile.BirthDate;
+            profileToUpdate.FullName = profile.Profile.FullName;
 
             Console.WriteLine(profileToUpdate.UserProfileId);
             _context.Update(profileToUpdate);
@@ -96,11 +96,16 @@ public class ProfileController : Controller
     [HttpGet("Profile/{UserName}/Edit")]
     public async Task<IActionResult> Edit(string? UserName)
     {
-        var user = await _context.Users.FirstOrDefaultAsync(m => m.UserName!.Equals(UserName));
+        var user = await _context.Users.FirstOrDefaultAsync(m => m.UserName.Equals(UserName));
+
         if (user is null) return NotFound();
 
         var profile = await _context.Profiles.FirstOrDefaultAsync(p => p.UserId == user.Id);
+
         if (profile is null) return NotFound();
+
+        if (user.Id != _userManager.GetUserId(User)) return Forbid();
+
         ViewBag.User = user;
         return View(user);
     }

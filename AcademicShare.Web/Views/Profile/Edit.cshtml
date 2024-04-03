@@ -27,7 +27,7 @@
                 @Html.ValidationMessageFor(model => model.UserName, "", new { @class = "text-danger" })
             </div>
         </div>
-        @if (userDetail.TwoFactorEnabled)
+        @if (userDetail!.TwoFactorEnabled)
         {
             <a class="dropdown-item" asp-controller="Account" asp-action="ManageTwoFactorAuthentication">
                 <button type="button" class="btn btn-primary">Disable 2FA</button>

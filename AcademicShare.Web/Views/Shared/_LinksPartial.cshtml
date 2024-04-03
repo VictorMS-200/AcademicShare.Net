@@ -1,4 +1,6 @@
-@if (Model.BirthDate is not null)
+@model ViewProfileDto
+
+@if (Model.Profile.BirthDate is not null)
 {
     <div class="my-2">
         <a style="font-weight: 500;">
@@ -9,11 +11,11 @@
                 <path
                     d="M6.5 7a1 1 0 1 0 0-2 1 1 0 0 0 0 2m3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2m3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2m-9 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2m3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2m3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2m3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2m-9 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2m3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2m3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2" />
             </svg>
-            @Model.BirthDate
+            @Model.Profile.BirthDate
         </a>
     </div>
 }
-@if (Model.Website is not null)
+@if (Model.Profile.Website is not null)
 {
     <div class="my-2">
         <a style="font-weight: 500;">
@@ -24,11 +26,11 @@
                 <path
                     d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243z" />
             </svg>
-            <a href="@Model.Website" class="text-decoration-none" style="color: #101a1f;">@Model.Website</a>
+            <a href="@Model.Profile.Website" class="text-decoration-none" style="color: #101a1f;">@Model.Profile.Website</a>
         </a>
     </div>
 }
-@if (Model.Location is not null)
+@if (Model.Profile.Location is not null)
 {
     <div class="my-2">
         <a style="font-weight: 500;">
@@ -38,7 +40,7 @@
                     d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A32 32 0 0 1 8 14.58a32 32 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10" />
                 <path d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4m0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6" />
             </svg>
-            @Model.Location
+            @Model.Profile.Location
         </a>
     </div>
 }

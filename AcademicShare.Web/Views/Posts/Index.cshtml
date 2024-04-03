@@ -65,10 +65,10 @@
                             alt="" class="rounded-circle me-2" style="width: 55px; height: 55px; object-fit: cover;">
                         <div class="align-content-center">
                             <p class="card-text mx-1 mb-0" style="font-size: large;">@Html.DisplayFor(modelItem =>
-                            _context.Profiles.FirstOrDefault(u => u.UserId == item.UserId).FullName)</p>
+                            _context.Profiles.FirstOrDefault(u => u.UserId == item.UserId!).FullName)</p>
                             <p class="card-text mx-1 mb-0 text-muted" style="font-size: medium;">#@Html.DisplayFor(modelItem
                             =>
-                            _context.Users.FirstOrDefault(u => u.Id == item.UserId).UserName)</p>
+                            _context.Users.FirstOrDefault(u => u.Id == item.UserId!).UserName)</p>
                         </div>
                     </div>
                     <hr>

@@ -1,4 +1,4 @@
-@model UserProfile
+@model ViewProfileDto
 
 <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasWithBackdrop"
     aria-labelledby="offcanvasWithBackdropLabel">
@@ -12,49 +12,45 @@
         <form method="post" asp-action="Index" enctype="multipart/form-data">
             <h2>Update your Profile</h2>
             <hr />
-
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="UserProfileId" />
-            <input type="hidden" asp-for="UserId" />
-            <input type="hidden" asp-for="ProfilePicture" />
-            <input type="hidden" asp-for="Banner" />
+            <input type="hidden" asp-for="Profile.UserProfileId" />
+            <input type="hidden" asp-for="Profile.UserId" />
+            <input type="hidden" asp-for="Profile.ProfilePicture" />
+            <input type="hidden" asp-for="Profile.Banner" />
             <div class="form-floating mb-3">
-                <input asp-for="FullName" class="form-control" />
-                <label asp-for="FullName" class="form-label">Full Name</label>
-                <span asp-validation-for="FullName" class="text-danger"></span>
+                <input asp-for="Profile.FullName" class="form-control" />
+                <label asp-for="Profile.FullName" class="form-label">Full Name</label>
+                <span asp-validation-for="Profile.FullName" class="text-danger"></span>
             </div>
             <div class="form-floating mb-3">
-                <input asp-for="Bio" class="form-control" aria-required="true" />
-                <label asp-for="Bio" class="form-label">Bio</label>
-                <span asp-validation-for="Bio" class="text-danger"></span>
+                <input asp-for="Profile.Bio" class="form-control" aria-required="true" />
+                <label asp-for="Profile.Bio" class="form-label">Bio</label>
+                <span asp-validation-for="Profile.Bio" class="text-danger"></span>
             </div>
             <div class="form-floating mb-3">
-                <input asp-for="Location" class="form-control" aria-required="true" />
-                <label asp-for="Location" class="form-label">Location</label>
-                <span asp-validation-for="Location" class="text-danger"></span>
+                <input asp-for="Profile.Location" class="form-control" aria-required="true" />
+                <label asp-for="Profile.Location" class="form-label">Location</label>
+                <span asp-validation-for="Profile.Location" class="text-danger"></span>
             </div>
             <div class="form-floating mb-3">
-                <input asp-for="Website" class="form-control" aria-required="true" />
-                <label asp-for="Website" class="form-label">Website</label>
-                <span asp-validation-for="Website" class="text-danger"></span>
+                <input asp-for="Profile.Website" class="form-control" aria-required="true" />
+                <label asp-for="Profile.Website" class="form-label">Website</label>
+                <span asp-validation-for="Profile.Website" class="text-danger"></span>
             </div>
             <div class="form-floating mb-3">
-                <input asp-for="BirthDate" class="form-control" aria-required="true" type="date" />
-                <label asp-for="BirthDate" class="form-label">Date Of Birth</label>
-                <span asp-validation-for="BirthDate" class="text-danger"></span>
-            </div>
-            <div class="col-4">
-                <img src="htttps://placehold.js/150x150" id="PrevImg" class="img-thumbnail" style="width:100px;height:100px" />
+                <input asp-for="Profile.BirthDate" class="form-control" aria-required="true" type="date" />
+                <label asp-for="Profile.BirthDate" class="form-label">Date Of Birth</label>
+                <span asp-validation-for="Profile.BirthDate" class="text-danger"></span>
             </div>
             <div class="mb-3">
-                <label asp-for="BannerFile" class="form-label">Banner</label>
-                <input type="file" id="ChosseImg" asp-for="BannerFile" class="form-control" aria-required="true" />
-                <span asp-validation-for="BannerFile" class="text-danger"></span>
+                <label asp-for="Profile.BannerFile" class="form-label">Banner</label>
+                <input type="file" id="ChosseImg" asp-for="Profile.BannerFile" class="form-control" aria-required="true" />
+                <span asp-validation-for="Profile.BannerFile" class="text-danger"></span>
             </div>
             <div class="mb-3">
-                <label asp-for="ProfilePictureFile" class="form-label">Profile Picture</label>
-                <input type="file" asp-for="ProfilePictureFile" class="form-control" placeholder="@Model.ProfilePicture"/>
-                <span asp-validation-for="ProfilePictureFile" class="text-danger"></span>
+                <label asp-for="Profile.ProfilePictureFile" class="form-label">Profile Picture</label>
+                <input type="file" asp-for="Profile.ProfilePictureFile" class="form-control" placeholder="@Model.Profile.ProfilePicture"/>
+                <span asp-validation-for="Profile.ProfilePictureFile" class="text-danger"></span>
             </div>
 
             <div class="mt-4">

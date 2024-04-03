@@ -19,10 +19,10 @@ public class UserProfile
     public string? Banner { get; set; } = "";
     [NotMapped]
     public IFormFile? BannerFile { get; set; }
-    public string? ProfilePicture { get; set; } = "";
+    public string ProfilePicture { get; set; } = "";
     [NotMapped]
     public IFormFile? ProfilePictureFile { get; set; }
     public DateOnly? BirthDate { get; set; }
-    public string? UserId { get; set; } = "";
+    public string UserId { get; set; } = "";
     public virtual User? User { get; set; }
 }

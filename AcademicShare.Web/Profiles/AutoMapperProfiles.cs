@@ -35,16 +35,21 @@ public class AutoMapperProfiles : Profile
             
         
         CreateMap<Post, ViewPostDto>()
+            .ForMember(dest => dest.PostId, opt => opt.MapFrom(src => src.PostId))
             .ForMember(dest => dest.UserId, opt => opt.MapFrom(src => src.UserId))
-            .ForMember(dest => dest.Title, opt => opt.MapFrom(src => src.Title))
-            .ForMember(dest => dest.Content, opt => opt.MapFrom(src => src.Content))
-            .ForMember(dest => dest.Image, opt => opt.MapFrom(src => src.Image))
+            .ForMember(dest => dest.PostTitle, opt => opt.MapFrom(src => src.Title))
+            .ForMember(dest => dest.PostContent, opt => opt.MapFrom(src => src.Content))
+            .ForMember(dest => dest.PostImage, opt => opt.MapFrom(src => src.Image))
+            .ForMember(dest => dest.Comments, opt => opt.MapFrom(src => src.Comments))
+            .ForMember(dest => dest.CreatedAt, opt => opt.MapFrom(src => src.CreatedAt))
             .ForMember(dest => dest.CommentContent, opt => opt.MapFrom(src => src.Comments.FirstOrDefault()!.Content))
             .ForMember(dest => dest.CommentUserId, opt => opt.MapFrom(src => src.Comments.FirstOrDefault()!.User))
-            .ForMember(dest => dest.Comment, opt => opt.MapFrom(src => src.Comments.FirstOrDefault()))
-            .ForMember(dest => dest.CreatedAt, opt => opt.MapFrom(src => src.CreatedAt))
-            .ForMember(dest => dest.Id, opt => opt.MapFrom(src => src.PostId))
-            .ForMember(dest => dest.Comments, opt => opt.MapFrom(src => src.Comments))
+            .ReverseMap();
+
+        CreateMap<User, ViewProfileDto>()
+            .ForMember(dest => dest.Posts, opt => opt.MapFrom(src => src.Posts))
+            .ForMember(dest => dest.UserName, opt => opt.MapFrom(src => src.UserName))
+            .ForMember(dest => dest.Profile, opt => opt.MapFrom(src => src.Profile))
             .ReverseMap();
     }
 }
