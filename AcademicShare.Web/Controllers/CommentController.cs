@@ -30,7 +30,9 @@ public class CommentController : Controller
         {
             comment.CreatedAt = DateTime.Now;
             comment.UserCommentId = _userManager.GetUserId(User);
+
             _context.Comments.Add(comment);
+            
             await _context.SaveChangesAsync();
             return RedirectToAction("ViewPost", new { id = comment.PostCommentId });
         }

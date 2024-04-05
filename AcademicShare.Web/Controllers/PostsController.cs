@@ -211,5 +211,30 @@ public class PostsController : Controller
         return View(Postcomment);
     }
 
+    [HttpPost]
+    public async Task<IActionResult> IndexLike(ViewPostDto posts)
+    {
+        if (posts == null) return NotFound();
+        var existingLikes = _context.Likes.Where(l => l.PostLikeId == posts.PostId && l.UserLikeId == _userManager.GetUserId(User));
+        
+        if (existingLikes.Any())
+        {
+            _context.Likes.RemoveRange(existingLikes);
+            await _context.SaveChangesAsync();
+            
+            return RedirectToAction("ViewPost", new { id = posts.PostId });
+        }
+
+        var like = new Like
+        {
+            PostLikeId = posts.PostId,
+            UserLikeId = _userManager.GetUserId(User)
+        };
+        _context.Likes.Add(like);
+
+        await _context.SaveChangesAsync(); 
+        return RedirectToAction("ViewPost", new { id = posts.PostId });
+    }
+
     private bool PostExists(int id) => _context.Posts.Any(e => e.PostId == id);
 }

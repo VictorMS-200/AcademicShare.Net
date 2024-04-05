@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "mzZagwRcDfpXHdzxyMNtM3S9dqv1q/g4ir+6fhVXx3E=",
+  "Hash": "+/ByDZl+XiSKjQWDprIW/m90dMnl2pukKXKtllFgGi4=",
   "Source": "AcademicShare.Web",
   "BasePath": "_content/AcademicShare.Web",
   "Mode": "Default",
@@ -167,6 +167,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\imagesPost\\0fd07d26-9da0-464d-a47c-f70157507a59_268543-3078984699.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\lusto\\OneDrive\\EstudosDeProgramação\\Estudos\\AcademicShare.Web\\AcademicShare.Web\\wwwroot\\imagesPost\\15c08733-ded5-4bf4-8001-7682d95b5650_268543-3078984699.jpg",
+      "SourceId": "AcademicShare.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\lusto\\OneDrive\\EstudosDeProgramação\\Estudos\\AcademicShare.Web\\AcademicShare.Web\\wwwroot\\",
+      "BasePath": "_content/AcademicShare.Web",
+      "RelativePath": "imagesPost/15c08733-ded5-4bf4-8001-7682d95b5650_268543-3078984699.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\imagesPost\\15c08733-ded5-4bf4-8001-7682d95b5650_268543-3078984699.jpg"
     },
     {
       "Identity": "C:\\Users\\lusto\\OneDrive\\EstudosDeProgramação\\Estudos\\AcademicShare.Web\\AcademicShare.Web\\wwwroot\\imagesPost\\1c0c0239-8bd1-4a4e-ba57-833f1bd05d3c_347c2ca5b4c637d405a550be0319678b.gif",
@@ -815,6 +834,25 @@
       "OriginalItemSpec": "wwwroot\\imagesProfile\\avatar\\default.png"
     },
     {
+      "Identity": "C:\\Users\\lusto\\OneDrive\\EstudosDeProgramação\\Estudos\\AcademicShare.Web\\AcademicShare.Web\\wwwroot\\imagesProfile\\avatar\\e1472cc8-3c2c-4d52-a673-e881ddb98e4e_Eren_Yeager_character_image_850.png",
+      "SourceId": "AcademicShare.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\lusto\\OneDrive\\EstudosDeProgramação\\Estudos\\AcademicShare.Web\\AcademicShare.Web\\wwwroot\\",
+      "BasePath": "_content/AcademicShare.Web",
+      "RelativePath": "imagesProfile/avatar/e1472cc8-3c2c-4d52-a673-e881ddb98e4e_Eren_Yeager_character_image_850.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\imagesProfile\\avatar\\e1472cc8-3c2c-4d52-a673-e881ddb98e4e_Eren_Yeager_character_image_850.png"
+    },
+    {
       "Identity": "C:\\Users\\lusto\\OneDrive\\EstudosDeProgramação\\Estudos\\AcademicShare.Web\\AcademicShare.Web\\wwwroot\\imagesProfile\\banner\\1d8ad1a3-3979-4106-8728-27ddf1075df0_994479.png",
       "SourceId": "AcademicShare.Web",
       "SourceType": "Discovered",
@@ -908,6 +946,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\imagesProfile\\banner\\default.png"
+    },
+    {
+      "Identity": "C:\\Users\\lusto\\OneDrive\\EstudosDeProgramação\\Estudos\\AcademicShare.Web\\AcademicShare.Web\\wwwroot\\imagesProfile\\banner\\e39b4d4b-6bc5-4235-83fa-e471f6ff3d43_img102.jpg",
+      "SourceId": "AcademicShare.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\lusto\\OneDrive\\EstudosDeProgramação\\Estudos\\AcademicShare.Web\\AcademicShare.Web\\wwwroot\\",
+      "BasePath": "_content/AcademicShare.Web",
+      "RelativePath": "imagesProfile/banner/e39b4d4b-6bc5-4235-83fa-e471f6ff3d43_img102.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\imagesProfile\\banner\\e39b4d4b-6bc5-4235-83fa-e471f6ff3d43_img102.jpg"
     },
     {
       "Identity": "C:\\Users\\lusto\\OneDrive\\EstudosDeProgramação\\Estudos\\AcademicShare.Web\\AcademicShare.Web\\wwwroot\\imagesProfile\\banner\\ee0628a6-26e8-476f-90ec-003dd6ad162b_Ewr7fYJUYAAVq9F.jpg",
