@@ -9,41 +9,43 @@
 <h4>Post</h4>
 <hr />
 <div class="row">
-    <div class="col-md-4">
-        <form asp-action="Edit">
+    <div class="col py-3 mb-5">
+        @using(Html.BeginForm("Edit", "Posts", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {
+            @Html.HiddenFor(model => model.UpdatedAt)
+            @Html.HiddenFor(model => model.User.Id)
+            @Html.HiddenFor(model => model.PostId)
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="UpdatedAt">
-            <input type="hidden" asp-for="UserId">
-            <input type="hidden" asp-for="PostId" />
-            <div class="form-group">
+            <div class="col-sm-4">
                 <label asp-for="Title" class="control-label"></label>
-                <input asp-for="Title" class="form-control" />
-                <span asp-validation-for="Title" class="text-danger"></span>
+                @Html.TextBoxFor(model => model.Title, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.Title, "", new { @class = "text-danger" })
             </div>
-            <div class="form-group">
+            <div class="col-sm-4">
                 <label asp-for="Content" class="control-label"></label>
-                <input asp-for="Content" class="form-control" />
-                <span asp-validation-for="Content" class="text-danger"></span>
+                @Html.TextBoxFor(model => model.Content, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.Content, "", new { @class = "text-danger" })
             </div>
-            <div class="form-group">
+
+            <div class="col-sm-4">
                 <label asp-for="Image" class="control-label"></label>
-                <input asp-for="Image" class="form-control" />
-                <span asp-validation-for="Image" class="text-danger"></span>
+                @Html.TextBoxFor(model => model.Image, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.Image, "", new { @class = "text-danger" })
             </div>
-            <div class="form-group">
+            <div class="col-sm-4">
                 <label asp-for="Teacher" class="control-label"></label>
-                <input asp-for="Teacher" class="form-control" />
-                <span asp-validation-for="Teacher" class="text-danger"></span>
+                @Html.TextBoxFor(model => model.Teacher, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.Teacher, "", new { @class = "text-danger" })
             </div>
-            <div class="form-group">
+            <div class="col-sm-4">
                 <label asp-for="CreatedAt" class="control-label"></label>
-                <input asp-for="CreatedAt" class="form-control" disabled />
-                <span asp-validation-for="CreatedAt" class="text-danger"></span>
+                @Html.TextBoxFor(model => model.CreatedAt, new { @class = "form-control", disabled = "disabled" })
+                @Html.ValidationMessageFor(model => model.CreatedAt, "", new { @class = "text-danger" })
             </div>
-            <div class="form-group">
+            <div class="col-sm-4">
                 <input type="submit" value="Save" class="btn btn-primary" />
             </div>
-        </form>
+        }
     </div>
 </div>
 

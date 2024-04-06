@@ -29,12 +29,14 @@ public class CommentController : Controller
         if (ModelState.IsValid)
         {
             comment.CreatedAt = DateTime.Now;
-            comment.UserCommentId = _userManager.GetUserId(User);
+            #pragma warning disable CS8601 // Possible null reference assignment.
+            comment.User.Id = _userManager.GetUserId(User);
+            #pragma warning restore CS8601 // Possible null reference assignment.
 
             _context.Comments.Add(comment);
             
             await _context.SaveChangesAsync();
-            return RedirectToAction("ViewPost", new { id = comment.PostCommentId });
+            return RedirectToAction("ViewPost", new { id = comment.Post.PostId });
         }
         return View(comment);
     }

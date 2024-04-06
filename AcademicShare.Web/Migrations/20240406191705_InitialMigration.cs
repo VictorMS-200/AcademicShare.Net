@@ -33,11 +33,8 @@ namespace AcademicShare.Web.Migrations
                     University = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Registration = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Course = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Image = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    ProfileId = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     CreateAt = table.Column<DateTime>(type: "datetime2", nullable: false),
                     UpdateAt = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    IsTeacher = table.Column<bool>(type: "bit", nullable: false),
                     UserName = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
                     NormalizedUserName = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
                     Email = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
@@ -168,22 +165,21 @@ namespace AcademicShare.Web.Migrations
                 name: "Posts",
                 columns: table => new
                 {
-                    PostId = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                    PostId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     Title = table.Column<string>(type: "nvarchar(80)", maxLength: 80, nullable: false),
                     Content = table.Column<string>(type: "nvarchar(500)", maxLength: 500, nullable: false),
                     Image = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Teacher = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Posts = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    UpdatedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    UserId = table.Column<string>(type: "nvarchar(450)", nullable: true)
+                    UpdatedAt = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Posts", x => x.PostId);
                     table.ForeignKey(
-                        name: "FK_Posts_AspNetUsers_UserId",
-                        column: x => x.UserId,
+                        name: "FK_Posts_AspNetUsers_Posts",
+                        column: x => x.Posts,
                         principalTable: "AspNetUsers",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
@@ -200,16 +196,16 @@ namespace AcademicShare.Web.Migrations
                     FullName = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Website = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Banner = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    ProfilePicture = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    ProfilePicture = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     BirthDate = table.Column<DateOnly>(type: "date", nullable: true),
-                    UserId = table.Column<string>(type: "nvarchar(450)", nullable: false)
+                    Profile = table.Column<string>(type: "nvarchar(450)", nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Profiles", x => x.UserProfileId);
                     table.ForeignKey(
-                        name: "FK_Profiles_AspNetUsers_UserId",
-                        column: x => x.UserId,
+                        name: "FK_Profiles_AspNetUsers_Profile",
+                        column: x => x.Profile,
                         principalTable: "AspNetUsers",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
@@ -219,13 +215,10 @@ namespace AcademicShare.Web.Migrations
                 name: "Comments",
                 columns: table => new
                 {
-                    CommentId = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Content = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    CommentId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    Content = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    PostCommentId = table.Column<int>(type: "int", nullable: false),
-                    PostId = table.Column<int>(type: "int", nullable: true),
-                    UserCommentId = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    PostId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     UserId = table.Column<string>(type: "nvarchar(450)", nullable: true)
                 },
                 constraints: table =>
@@ -248,11 +241,8 @@ namespace AcademicShare.Web.Migrations
                 name: "Likes",
                 columns: table => new
                 {
-                    LikeId = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    PostLikeId = table.Column<int>(type: "int", nullable: false),
-                    PostId = table.Column<int>(type: "int", nullable: true),
-                    UserLikeId = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    LikeId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    PostId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     UserId = table.Column<string>(type: "nvarchar(450)", nullable: true)
                 },
                 constraints: table =>
@@ -331,15 +321,16 @@ namespace AcademicShare.Web.Migrations
                 column: "UserId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Posts_UserId",
+                name: "IX_Posts_Posts",
                 table: "Posts",
-                column: "UserId");
+                column: "Posts");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Profiles_UserId",
+                name: "IX_Profiles_Profile",
                 table: "Profiles",
-                column: "UserId",
-                unique: true);
+                column: "Profile",
+                unique: true,
+                filter: "[Profile] IS NOT NULL");
         }
 
         /// <inheritdoc />

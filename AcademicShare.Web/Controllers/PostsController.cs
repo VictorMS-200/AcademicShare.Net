@@ -7,6 +7,7 @@ using AcademicShare.Web.Models;
 using AcademicShare.Web.Models.Dtos;
 using AutoMapper;
 using AcademicShare.Web.Models.Paginated;
+using System;
 
 namespace AcademicShare.Web.Controllers;
 
@@ -56,7 +57,14 @@ public class PostsController : Controller
         ViewBag.User = await _context.Users.FirstOrDefaultAsync(p => p.Id == _userManager.GetUserId(User));
 
         int pageSize = 9;
-        return View(await PaginatedList<Post>.CreateAsync(posts.OrderByDescending(c => c.CreatedAt).AsNoTracking(), pageNumber ?? 1, pageSize));
+        return View(
+            await PaginatedList<Post>.CreateAsync(
+            posts.OrderByDescending(c => c.CreatedAt)
+                .AsNoTracking()
+                .Include(p => p.User)
+                .Include(p => p.Comments)
+                .Include(p => p.Likes),
+            pageNumber ?? 1, pageSize));
     }
 
     // GET: Posts/Details/5
@@ -65,7 +73,7 @@ public class PostsController : Controller
         if (id == null) return NotFound();
 
         var post = await _context.Posts
-            .FirstOrDefaultAsync(m => m.PostId == id);
+            .FirstOrDefaultAsync(m => m.PostId.Equals(id));
         if (post == null) return NotFound();
 
         return View(post);
@@ -110,12 +118,11 @@ public class PostsController : Controller
         return View(post);
     }
 
-    // GET: Posts/Edit/5
-    public async Task<IActionResult> Edit(int? id)
+    public async Task<IActionResult> Edit(Guid? id)
     {
         if (id == null) return NotFound();
 
-        var post = await _context.Posts.FindAsync(id);
+        var post = await _context.Posts.AsNoTracking().FirstOrDefaultAsync(p => p.PostId.Equals(id));
         if (post == null) return NotFound();
         return View(post);
     }
@@ -123,17 +130,17 @@ public class PostsController : Controller
     [HttpPost]
     [ValidateAntiForgeryToken]
     public async Task<IActionResult> Edit(
-        int id,
+        Guid id,
         [Bind("PostId,Title,Content,Image,Teacher,CreatedAt,UpdatedAt,UserId")] Post post)
     {
-        if (id != post.PostId) return NotFound();
+        if (!id.Equals(post.PostId)) return NotFound();
 
         if (ModelState.IsValid)
         {
             try
             {
-                var user = await _context.Users.FirstOrDefaultAsync(u => u.Id == post.UserId);
-                post.User = user;
+                var user = await _context.Users.FirstOrDefaultAsync(u => u.Id == post.User.Id);
+                post.User = user!;
                 post.UpdatedAt = DateTime.Now;
                 _context.Update(post);
                 await _context.SaveChangesAsync();
@@ -153,7 +160,7 @@ public class PostsController : Controller
     {
         if (id == null) NotFound();
 
-        var post = await _context.Posts.FirstOrDefaultAsync(m => m.PostId == id);
+        var post = await _context.Posts.FirstOrDefaultAsync(m => m.PostId.Equals(id));
 
         if (post == null) NotFound();
 
@@ -173,35 +180,44 @@ public class PostsController : Controller
         return RedirectToAction(nameof(Index));
     }
 
-    [HttpGet]
-    public async Task<IActionResult> ViewPost(int id)
+    [HttpGet, ActionName("ViewPost")]
+    public async Task<IActionResult> ViewPost(Guid id)
     {
-        if (id == 0) return NotFound();
-        
-        var post = await _context.Posts.FindAsync(id);
+        if (id.Equals(null)) return NotFound();
 
+        var post = await _context.Posts
+            .Include(p => p.Comments)
+            .Include(p => p.Likes)
+            .Include(p => p.User)
+            .AsNoTracking()
+            .FirstOrDefaultAsync(p => p.PostId.Equals(id));
 
         if (post == null) return NotFound();
+
         ViewPostDto postView = _mapper.Map<Post, ViewPostDto>(post);
+
         return View(postView);
     }
     [HttpPost]
     [ValidateAntiForgeryToken]
     public async Task<IActionResult> ViewPost(
-        [Bind(include: "CommentContent,Id,PostId")]
+        [Bind(include: "CommentContent,PostId")]
         ViewPostDto Postcomment)
     {
         if (Postcomment == null) return NotFound();
         if (ModelState.IsValid)
         {
             var user = await _context.Users.FirstOrDefaultAsync(u => u.Id == _userManager.GetUserId(User));
+
+            #pragma warning disable CS8601 // Possible null reference assignment.
             var Comment = new Comment
             {
                 Content = Postcomment.CommentContent,
-                PostCommentId = Postcomment.PostId,
-                UserCommentId = user!.Id,
+                Post = await _context.Posts.FirstOrDefaultAsync(p => p.PostId.Equals(Postcomment.PostId)),
+                User = user,
                 CreatedAt = DateTime.Now,
             };
+            #pragma warning restore CS8601 // Possible null reference assignment.
             _context.Comments.Add(Comment);
 
             await _context.SaveChangesAsync();
@@ -212,29 +228,70 @@ public class PostsController : Controller
     }
 
     [HttpPost]
-    public async Task<IActionResult> IndexLike(ViewPostDto posts)
+    [ValidateAntiForgeryToken]
+    public async Task<IActionResult> IndexLike(
+        [Bind(include: "PostId")]
+        ViewPostDto posts)
     {
         if (posts == null) return NotFound();
-        var existingLikes = _context.Likes.Where(l => l.PostLikeId == posts.PostId && l.UserLikeId == _userManager.GetUserId(User));
-        
+        var existingLikes = _context.Likes.Where(l => l.Post.PostId.Equals(posts.PostId) && l.User.Id == _userManager.GetUserId(User));
+
         if (existingLikes.Any())
         {
             _context.Likes.RemoveRange(existingLikes);
             await _context.SaveChangesAsync();
-            
+
             return RedirectToAction("ViewPost", new { id = posts.PostId });
         }
 
+        #pragma warning disable CS8601 // Possible null reference assignment.
         var like = new Like
         {
-            PostLikeId = posts.PostId,
-            UserLikeId = _userManager.GetUserId(User)
+            Post = await _context.Posts.FirstOrDefaultAsync(p => p.PostId.Equals(posts.PostId)),
+            User = await _context.Users.FirstOrDefaultAsync(u => u.Id == _userManager.GetUserId(User)),     
         };
+        #pragma warning restore CS8601 // Possible null reference assignment.
         _context.Likes.Add(like);
 
-        await _context.SaveChangesAsync(); 
+        await _context.SaveChangesAsync();
         return RedirectToAction("ViewPost", new { id = posts.PostId });
     }
 
-    private bool PostExists(int id) => _context.Posts.Any(e => e.PostId == id);
+    [HttpGet]
+    public async Task<IActionResult> LikedPosts(
+        string UserName,
+        string searchString,
+        int? pageNumber,
+        string sortOrder)
+    {
+        ViewData["CurrentSort"] = sortOrder;
+
+        if (searchString != null)
+        {
+            pageNumber = 1;
+        }
+
+        var user = await _context.Users.FirstOrDefaultAsync(u => u.Id == _userManager.GetUserId(User));
+        var likedPosts = _context.Likes.Where(l => l.User.Id == user.Id).Select(l => l.Post.PostId);
+        var posts = _context.Posts.Where(p => likedPosts.Contains(p.PostId));
+
+        var likedPostsList = from m in posts
+                             select m;
+        
+        if (!string.IsNullOrEmpty(searchString))
+            likedPostsList = likedPostsList.Where(s => s.Title!.Contains(searchString));
+
+        ViewBag.User = await _context.Users.FirstOrDefaultAsync(p => p.Id == _userManager.GetUserId(User));
+        
+        int pageSize = 9;
+        return View(await PaginatedList<Post>.CreateAsync(
+            likedPostsList
+                .OrderByDescending(c => c.CreatedAt)
+                .AsNoTracking()
+                .Include(p => p.User)
+                .Include(p => p.Comments), 
+                pageNumber ?? 1, pageSize));
+    }
+
+    private bool PostExists(Guid id) => _context.Posts.Any(e => e.PostId.Equals(id));
 }

@@ -8,8 +8,9 @@
 
 @{
     ViewBag.Title = "Post";
+    ViewData["Title"] = "Post " + Model.PostTitle;
     var user = _context.Users.Find(Model.UserId);
-    var ListComment = await _context.Comments.Where(c => c.PostCommentId == Model.PostId).OrderByDescending(c =>
+    var ListComment = await _context.Comments.Where(c => c.Post.PostId.Equals(Model.PostId)).OrderByDescending(c =>
     c.CreatedAt).ToListAsync();
 }
 @section Styles {
@@ -24,11 +25,11 @@
                 alt="@Html.DisplayFor(modelItem => Model.PostTitle)">
             <div class="d-flex justify-content-start rounded my-2 p-0" style="background-color: rgb(212, 233, 252);">
                 <div class="w-50 my-3 d-inline-flex m-4">
-                    <img src="/imagesProfile/avatar/@_context.Profiles.FirstOrDefault(u => u.UserId == Model.UserId!).ProfilePicture"
+                    <img src="/imagesProfile/avatar/@_context.Profiles.FirstOrDefault(u => u.User.Id.Equals(Model.UserId!)).ProfilePicture"
                         alt="" class="rounded-circle me-2" style="width: 55px; height: 55px; object-fit: cover;">
                     <div class="align-content-center">
                         <p class="card-text mx-1 mb-0" style="font-size: large;">
-                            @Html.DisplayFor(modelItem => _context.Profiles.FirstOrDefault(u => u.UserId ==
+                            @Html.DisplayFor(modelItem => _context.Profiles.FirstOrDefault(u => u.User.Id ==
                                      Model.UserId!).FullName)
                         </p>
                         <p class="card-text mx-1 mb-0 text-muted" style="font-size: medium;">
@@ -44,9 +45,9 @@
                 <input type="hidden" asp-for="UserId" />
                 <button type="submit" class="btn btn-link text-decoration-none text-dark">
                     <div class="d-inline-flex justify-content-center">
-                        @if (_context.Likes.FirstOrDefault(l => l.UserLikeId ==
+                        @if (_context.Likes.FirstOrDefault(l => l.User.Id ==
                         SignInManager.UserManager.GetUserId(User)
-                        && l.PostLikeId == Model.PostId) == null)
+                        && l.Post.PostId.Equals(Model.PostId)) == null)
                         {
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
                                 class="bi bi-star ms-2" viewBox="0 0 16 16">
@@ -63,7 +64,7 @@
                             </svg>
                         }
                         <p class="mb-0 mx-2 align-content-center">
-                            @_context.Likes.Where(c => c.PostLikeId == Model.PostId).ToList().Count()
+                            @_context.Likes.Where(c => c.Post.PostId.Equals(Model.PostId)).ToList().Count()
                         </p>
                     </div>
                 </button>
@@ -86,17 +87,17 @@
                     <div class="col rounded my-3 p-2" style="background-color: rgb(242, 246, 248);">
                         <div class="d-inline-flex w-100 m-auto">
                             <div class="w-100 my-3 d-inline-flex m-4">
-                                <img src="/imagesProfile/avatar/@_context.Profiles.FirstOrDefault(u => u.UserId == comment.UserCommentId!).ProfilePicture"
-                                    alt="/imagesProfile/avatar/@_context.Profiles.FirstOrDefault(u => u.UserId == comment.UserCommentId!).ProfilePicture"
+                                <img src="/imagesProfile/avatar/@_context.Profiles.FirstOrDefault(u => u.User.Id == comment.User.Id!).ProfilePicture"
+                                    alt="/imagesProfile/avatar/@_context.Profiles.FirstOrDefault(u => u.User.Id == comment.User.Id!).ProfilePicture"
                                     class="rounded-circle me-2" style="width: 55px; height: 55px; object-fit: cover;">
                                 <div class="align-content-center">
                                     <p class="card-text mx-1 mb-0" style="font-size: large;">
-                                        @Html.DisplayFor(modelItem => _context.Profiles.FirstOrDefault(u => u.UserId ==
-                                                 comment.UserCommentId!).FullName)
+                                        @Html.DisplayFor(modelItem => _context.Profiles.FirstOrDefault(u => u.User.Id ==
+                                                 comment.User.Id!).FullName)
                                     </p>
                                     <p class="card-text mx-1 mb-0 text-muted" style="font-size: medium;">
                                         #@Html.DisplayFor(modelItem => _context.Users.FirstOrDefault(u => u.Id ==
-                                                comment.UserCommentId!).UserName)
+                                                comment.User.Id!).UserName)
                                     </p>
                                 </div>
                             </div>
@@ -107,10 +108,6 @@
                         </div>
                     </div>
                 }
-            }
-            else
-            {
-
             }
         </div>
     </div>

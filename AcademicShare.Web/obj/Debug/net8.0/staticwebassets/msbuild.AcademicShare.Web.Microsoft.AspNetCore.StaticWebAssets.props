@@ -112,6 +112,22 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\imagesPost\0fd07d26-9da0-464d-a47c-f70157507a59_268543-3078984699.jpg))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\imagesPost\10a46908-72f1-412a-99e6-1d0b13116399_461216-desk-work-3150512634.jpg))">
+      <SourceType>Package</SourceType>
+      <SourceId>AcademicShare.Web</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/AcademicShare.Web</BasePath>
+      <RelativePath>imagesPost/10a46908-72f1-412a-99e6-1d0b13116399_461216-desk-work-3150512634.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\imagesPost\10a46908-72f1-412a-99e6-1d0b13116399_461216-desk-work-3150512634.jpg))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\imagesPost\15c08733-ded5-4bf4-8001-7682d95b5650_268543-3078984699.jpg))">
       <SourceType>Package</SourceType>
       <SourceId>AcademicShare.Web</SourceId>
@@ -176,6 +192,22 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\imagesPost\25071fed-b8ee-4425-b707-ae85d3d90154_Mid-East_Allied_Forces.jpg))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\imagesPost\2c6dde17-518a-49a3-9b54-79fcb2363deb_268543-3078984699.jpg))">
+      <SourceType>Package</SourceType>
+      <SourceId>AcademicShare.Web</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/AcademicShare.Web</BasePath>
+      <RelativePath>imagesPost/2c6dde17-518a-49a3-9b54-79fcb2363deb_268543-3078984699.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\imagesPost\2c6dde17-518a-49a3-9b54-79fcb2363deb_268543-3078984699.jpg))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\imagesPost\2d7477eb-5a2f-4c29-8da5-6f90ac4756ec_Screenshot_2.png))">
       <SourceType>Package</SourceType>
       <SourceId>AcademicShare.Web</SourceId>
@@ -207,6 +239,22 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\imagesPost\2f361f9f-1aed-41a1-902b-8c0b28d655f2_Eren_Yeager_character_image_850.png))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\imagesPost\30569e2c-c815-4750-b114-f68af52a7a66_1691916-182849334.jpg))">
+      <SourceType>Package</SourceType>
+      <SourceId>AcademicShare.Web</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/AcademicShare.Web</BasePath>
+      <RelativePath>imagesPost/30569e2c-c815-4750-b114-f68af52a7a66_1691916-182849334.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\imagesPost\30569e2c-c815-4750-b114-f68af52a7a66_1691916-182849334.jpg))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\imagesPost\36a08e38-df3f-476d-9f51-1f09cc9af648_d240393ef3c16613b6735598ed6622f296819b7a-2362x1306.png))">
       <SourceType>Package</SourceType>
@@ -336,6 +384,22 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\imagesPost\70d3d524-d82a-4ce9-a1ec-805bb731746a_268543-3078984699.jpg))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\imagesPost\714ce8ba-277c-49be-96eb-2b08d4b90b45_1691916-182849334.jpg))">
+      <SourceType>Package</SourceType>
+      <SourceId>AcademicShare.Web</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/AcademicShare.Web</BasePath>
+      <RelativePath>imagesPost/714ce8ba-277c-49be-96eb-2b08d4b90b45_1691916-182849334.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\imagesPost\714ce8ba-277c-49be-96eb-2b08d4b90b45_1691916-182849334.jpg))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\imagesPost\77685525-7f75-497d-be45-acad117679c7_4ee34739a37d0775fbeb88efac04b47c.jpg))">
       <SourceType>Package</SourceType>
       <SourceId>AcademicShare.Web</SourceId>
@@ -351,6 +415,38 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\imagesPost\77685525-7f75-497d-be45-acad117679c7_4ee34739a37d0775fbeb88efac04b47c.jpg))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\imagesPost\82306e74-0225-4b1a-a44a-dd7479df7c86_1691916-182849334.jpg))">
+      <SourceType>Package</SourceType>
+      <SourceId>AcademicShare.Web</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/AcademicShare.Web</BasePath>
+      <RelativePath>imagesPost/82306e74-0225-4b1a-a44a-dd7479df7c86_1691916-182849334.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\imagesPost\82306e74-0225-4b1a-a44a-dd7479df7c86_1691916-182849334.jpg))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\imagesPost\8895943d-aa6f-4c9e-a596-994c014e868f_461216-desk-work-3150512634.jpg))">
+      <SourceType>Package</SourceType>
+      <SourceId>AcademicShare.Web</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/AcademicShare.Web</BasePath>
+      <RelativePath>imagesPost/8895943d-aa6f-4c9e-a596-994c014e868f_461216-desk-work-3150512634.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\imagesPost\8895943d-aa6f-4c9e-a596-994c014e868f_461216-desk-work-3150512634.jpg))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\imagesPost\8a8e1132-b21f-4904-87fc-2ffb49fdab58_Screenshot_2.png))">
       <SourceType>Package</SourceType>
@@ -527,6 +623,22 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\imagesPost\e3c0dc80-6519-4a89-89a9-e99131c9af79_Screenshot_1.png))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\imagesPost\eb344746-b420-4e51-9e0d-d474dcd61f26_461216-desk-work-3150512634.jpg))">
+      <SourceType>Package</SourceType>
+      <SourceId>AcademicShare.Web</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/AcademicShare.Web</BasePath>
+      <RelativePath>imagesPost/eb344746-b420-4e51-9e0d-d474dcd61f26_461216-desk-work-3150512634.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\imagesPost\eb344746-b420-4e51-9e0d-d474dcd61f26_461216-desk-work-3150512634.jpg))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\imagesPost\ebb10c0f-fe49-4474-bf64-d62942ca991f_Screenshot_2.png))">
       <SourceType>Package</SourceType>

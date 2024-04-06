@@ -1,0 +1,68 @@
+@model PaginatedList<Post>
+
+@section Styles {
+    <link rel="stylesheet" href="~/css/Posts.css">
+}
+
+<div>
+    <h1 class="display-4">Liked Posts</h1>
+    <p class="lead">Here you can see all the posts you liked</p>
+</div>
+
+
+@if (Model.Count == 0)
+{
+    <div class="alert alert-info" role="alert">
+        You haven't liked any posts yet. Click <a href="/Posts">here</a> to see all posts.
+    </div>
+}
+else
+{
+    <form asp-controller="Posts" asp-action="Index" method="get">
+        <div class="justify-content-start align-content-center d-flex mt-4">
+            <div class="form-floating col-md-5">
+                <input type="search" class="form-control" name="SearchString" id="floatingInput"
+                    placeholder="name@example.com">
+                <label>Search title</label>
+            </div>
+            <input class="btn btn-primary mx-2 m-auto" type="submit" value="Filter" />
+        </div>
+    </form>
+    <div class="d-flex justify-content-start mt-4">
+        <a asp-action="Create" asp-controller="Posts">
+            <button class="btn btn-primary" type="submit">
+                Make a Post
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil"
+                    viewBox="0 0 16 16">
+                    <path
+                        d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325" />
+                </svg>
+            </button>
+        </a>
+        <a asp-controller="Profile" asp-action="Index" asp-route-UserName="@ViewBag.User.UserName">
+            <button class="btn btn-primary mx-3" type="submit">
+                View Profile
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-person-vcard" viewBox="0 0 16 16">
+                    <path
+                        d="M5 8a2 2 0 1 0 0-4 2 2 0 0 0 0 4m4-2.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5M9 8a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4A.5.5 0 0 1 9 8m1 2.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5" />
+                    <path
+                        d="M2 2a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2zM1 4a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H8.96q.04-.245.04-.5C9 10.567 7.21 9 5 9c-2.086 0-3.8 1.398-3.984 3.181A1 1 0 0 1 1 12z" />
+                </svg>
+            </button>
+        </a>
+        <a asp-controller="Posts" asp-action="Index" asp-route-UserName="@ViewBag.User.UserName">
+            <button class="btn btn-primary" type="submit">
+                View All Posts
+
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-journal"
+                    viewBox="0 0 16 16">
+                    <path
+                        d="M1.5 1a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-1zM1 2v12a1 1 0 0 0 1 1h11a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1zm1.5 2a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 0 1h-8a.5.5 0 0 1-.5-.5zm0 2a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 0 1h-8a.5.5 0 0 1-.5-.5zm0 2a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 0 1h-8a.5.5 0 0 1-.5-.5zm0 2a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 0 1h-8a.5.5 0 0 1-.5-.5z" />
+                </svg>
+            </button>
+        </a>
+    </div>
+    <hr>
+    <partial name="_PostPagePartial" model="@Model" />
+}

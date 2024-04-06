@@ -46,7 +46,6 @@ public class AccountController : Controller
 			}
 			
 			var UserProfile = _mapper.Map<User>(model);
-
 			var result = await _userManager.CreateAsync(UserProfile, model.Password!);
 
 			if (result.Succeeded)
@@ -54,7 +53,6 @@ public class AccountController : Controller
 				await _signInManager.SignInAsync(UserProfile, isPersistent: false);
 				return RedirectToAction("Index", "Home");
 			}
-
 			foreach (var error in result.Errors)
 			{
 				ModelState.AddModelError(string.Empty, error.Description);

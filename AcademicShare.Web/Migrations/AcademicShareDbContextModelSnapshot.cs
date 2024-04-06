@@ -24,26 +24,19 @@ namespace AcademicShare.Web.Migrations
 
             modelBuilder.Entity("AcademicShare.Web.Models.Dtos.Comment", b =>
                 {
-                    b.Property<int>("CommentId")
+                    b.Property<Guid>("CommentId")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("CommentId"));
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Content")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("PostCommentId")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("PostId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("UserCommentId")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<Guid>("PostId")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("UserId")
                         .HasColumnType("nvarchar(450)");
@@ -59,23 +52,15 @@ namespace AcademicShare.Web.Migrations
 
             modelBuilder.Entity("AcademicShare.Web.Models.Dtos.Like", b =>
                 {
-                    b.Property<int>("LikeId")
+                    b.Property<Guid>("LikeId")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                        .HasColumnType("uniqueidentifier");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("LikeId"));
-
-                    b.Property<int?>("PostId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("PostLikeId")
-                        .HasColumnType("int");
+                    b.Property<Guid>("PostId")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("UserId")
                         .HasColumnType("nvarchar(450)");
-
-                    b.Property<string>("UserLikeId")
-                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("LikeId");
 
@@ -88,11 +73,9 @@ namespace AcademicShare.Web.Migrations
 
             modelBuilder.Entity("AcademicShare.Web.Models.Dtos.Post", b =>
                 {
-                    b.Property<int>("PostId")
+                    b.Property<Guid>("PostId")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("PostId"));
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Content")
                         .IsRequired()
@@ -106,6 +89,10 @@ namespace AcademicShare.Web.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("Posts")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
                     b.Property<string>("Teacher")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -118,12 +105,9 @@ namespace AcademicShare.Web.Migrations
                     b.Property<DateTime>("UpdatedAt")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("UserId")
-                        .HasColumnType("nvarchar(450)");
-
                     b.HasKey("PostId");
 
-                    b.HasIndex("UserId");
+                    b.HasIndex("Posts");
 
                     b.ToTable("Posts");
                 });
@@ -154,13 +138,6 @@ namespace AcademicShare.Web.Migrations
                     b.Property<bool>("EmailConfirmed")
                         .HasColumnType("bit");
 
-                    b.Property<string>("Image")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<bool>("IsTeacher")
-                        .HasColumnType("bit");
-
                     b.Property<bool>("LockoutEnabled")
                         .HasColumnType("bit");
 
@@ -183,10 +160,6 @@ namespace AcademicShare.Web.Migrations
 
                     b.Property<bool>("PhoneNumberConfirmed")
                         .HasColumnType("bit");
-
-                    b.Property<string>("ProfileId")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Registration")
                         .IsRequired()
@@ -245,21 +218,20 @@ namespace AcademicShare.Web.Migrations
                     b.Property<string>("Location")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("ProfilePicture")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("UserId")
-                        .IsRequired()
+                    b.Property<string>("Profile")
                         .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("ProfilePicture")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Website")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("UserProfileId");
 
-                    b.HasIndex("UserId")
-                        .IsUnique();
+                    b.HasIndex("Profile")
+                        .IsUnique()
+                        .HasFilter("[Profile] IS NOT NULL");
 
                     b.ToTable("Profiles");
                 });
@@ -402,7 +374,8 @@ namespace AcademicShare.Web.Migrations
                     b.HasOne("AcademicShare.Web.Models.Dtos.Post", "Post")
                         .WithMany("Comments")
                         .HasForeignKey("PostId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.HasOne("AcademicShare.Web.Models.Dtos.User", "User")
                         .WithMany("Comments")
@@ -418,7 +391,8 @@ namespace AcademicShare.Web.Migrations
                     b.HasOne("AcademicShare.Web.Models.Dtos.Post", "Post")
                         .WithMany("Likes")
                         .HasForeignKey("PostId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.HasOne("AcademicShare.Web.Models.Dtos.User", "User")
                         .WithMany("Likes")
@@ -433,8 +407,9 @@ namespace AcademicShare.Web.Migrations
                 {
                     b.HasOne("AcademicShare.Web.Models.Dtos.User", "User")
                         .WithMany("Posts")
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .HasForeignKey("Posts")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("User");
                 });
@@ -443,9 +418,8 @@ namespace AcademicShare.Web.Migrations
                 {
                     b.HasOne("AcademicShare.Web.Models.Dtos.User", "User")
                         .WithOne("Profile")
-                        .HasForeignKey("AcademicShare.Web.Models.Dtos.UserProfile", "UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("AcademicShare.Web.Models.Dtos.UserProfile", "Profile")
+                        .OnDelete(DeleteBehavior.Cascade);
 
                     b.Navigation("User");
                 });

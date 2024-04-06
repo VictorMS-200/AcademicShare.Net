@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
@@ -11,7 +12,8 @@ public class PaginatedList<T> : List<T>
 {
     public int PageIndex { get; private set; }
     public int TotalPages { get; private set; }
-
+    public int PageSize { get; private set; }
+    public int TotalCount { get; private set; }
     public PaginatedList(List<T> items, int count, int pageIndex, int pageSize)
     {
         PageIndex = pageIndex;

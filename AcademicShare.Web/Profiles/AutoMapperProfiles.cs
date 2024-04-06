@@ -17,7 +17,7 @@ public class AutoMapperProfiles : Profile
             .IgnoreAllPropertiesWithAnInaccessibleSetter()
             .ReverseMap();
 
-        CreateMap<CreateUserDto, User>()
+        _ = CreateMap<CreateUserDto, User>()
             .ForMember(dest => dest.UserName, opt => opt.MapFrom(src => src.UserName))
             .ForMember(dest => dest.Email, opt => opt.MapFrom(src => src.Email))
             .ForMember(dest => dest.Course, opt => opt.MapFrom(src => src.Course))
@@ -36,7 +36,7 @@ public class AutoMapperProfiles : Profile
         
         CreateMap<Post, ViewPostDto>()
             .ForMember(dest => dest.PostId, opt => opt.MapFrom(src => src.PostId))
-            .ForMember(dest => dest.UserId, opt => opt.MapFrom(src => src.UserId))
+            .ForMember(dest => dest.UserId, opt => opt.MapFrom(src => src.User.Id))
             .ForMember(dest => dest.PostTitle, opt => opt.MapFrom(src => src.Title))
             .ForMember(dest => dest.PostContent, opt => opt.MapFrom(src => src.Content))
             .ForMember(dest => dest.PostImage, opt => opt.MapFrom(src => src.Image))

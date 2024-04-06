@@ -4,40 +4,35 @@
     ViewData["Title"] = "Login";
 }
 
-<h1>@ViewData["Title"]</h1>
+<div>
+    <h1 class="display-4">@ViewData["Title"]</h1>
+    <p class="lead">Use a local account to log in!</p>
+</div>
 <div class="row">
-    <div class="col-md-4">
-        <section>
-            <form method="post">
-                <h2>Use a local account to log in.</h2>
-                <hr />
-                <div asp-validation-summary="All" class="text-danger"></div>
-                <div class="form-floating mb-3">
-                    <input asp-for="Email" class="form-control" aria-required="true" />
-                    <label asp-for="Email" class="form-label">Email</label>
-                    <span asp-validation-for="Email" class="text-danger"></span>
+    <div class="col py-3 mb-5">
+        @using (Html.BeginForm("Login", "Account", FormMethod.Post))
+        {
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="col-sm-4">
+                <i class="fa-solid fa-envelope"></i>
+                <label asp-for="Email" class="col-sm-4 col-form-label">Email</label>
+                @Html.TextBoxFor(m => m.Email, new { @class = "form-control", @autocomplete = "username", @placeholder = "name@exemple.com" })
+                @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+            </div>
+            <div class="col-sm-4">
+                <i class="fa-solid fa-key"></i>
+                <label asp-for="Password" class="col-sm-4 col-form-label">Password</label>
+                @Html.PasswordFor(m => m.Password, new { @class = "form-control", @autocomplete = "current-password", @placeholder = "Password" })
+                @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+            </div>
+            <div class="row mt-4">
+                <div class="col-sm-2 d-grid">
+                    <button type="submit" class="btn btn-primary">Login</button>
                 </div>
-                <div class="form-floating mb-3">
-                    <input asp-for="Password" class="form-control" aria-required="true" />
-                    <label asp-for="Password" class="form-label">Password</label>
-                    <span asp-validation-for="Password" class="text-danger"></span>
+                <div class="col-sm-2 d-grid">
+                    <a class="btn btn-outline-primary" href="/" role="button">Return</a>
                 </div>
-                <div class="checkbox mb-3">
-                    <label asp-for="RememberMe" class="form-label">
-                        <input class="form-check-input" asp-for="RememberMe" />
-                        @Html.DisplayNameFor(m => m.RememberMe)
-                    </label>
-                </div>
-                <div>
-                    <button type="submit" class="w-100 btn btn-lg btn-primary">Login</button>
-                </div>
-            </form>
-        </section>
-    </div>
-    <div class="col-md-6 col-md-offset-2">
-        <section>
-            <h3>Use another service to log in.</h3>
-            <hr />
-        </section>
+            </div>
+        }
     </div>
 </div>

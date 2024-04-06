@@ -37,7 +37,7 @@ public class ProfileController : Controller
         var user = await _context.Users.FirstOrDefaultAsync(m => m.UserName!.Equals(UserName));
         if (user is null) return NotFound();
 
-        var profile = await _context.Profiles.FirstOrDefaultAsync(p => p.UserId == user.Id);
+        var profile = await _context.Profiles.AsNoTracking().FirstOrDefaultAsync(p => p.User.Id.Equals(user.Id));
         if (profile is null) return NotFound();
 
         var viewProfile = _mapper.Map<ViewProfileDto>(user);
@@ -68,7 +68,7 @@ public class ProfileController : Controller
                 fileNameProfilePicture = UserProfile.Profile.ProfilePicture!;
 
             var user = await _userManager.GetUserAsync(User);
-            var profileToUpdate = await _context.Profiles.FirstOrDefaultAsync(p => p.UserId == user!.Id);
+            var profileToUpdate = await _context.Profiles.FirstOrDefaultAsync(p => p.User.Id == user!.Id);
             
 
             DeleteFile(profileToUpdate!.Banner!, fileNameBanner, "banner");
@@ -79,7 +79,7 @@ public class ProfileController : Controller
             profileToUpdate.Website = UserProfile.Profile.Website;
             profileToUpdate.Banner = fileNameBanner;
             profileToUpdate.ProfilePicture = fileNameProfilePicture;
-            profileToUpdate.UserId = user!.Id;
+            profileToUpdate.User = user;
             profileToUpdate.UserProfileId = UserProfile.Profile.UserProfileId;
             profileToUpdate.BirthDate = UserProfile.Profile.BirthDate;
             profileToUpdate.FullName = UserProfile.Profile.FullName;
@@ -100,7 +100,7 @@ public class ProfileController : Controller
 
         if (user is null) return NotFound();
 
-        var profile = await _context.Profiles.FirstOrDefaultAsync(p => p.UserId == user.Id);
+        var profile = await _context.Profiles.FirstOrDefaultAsync(p => p.User.Id.Equals(user.Id));
 
         if (profile is null) return NotFound();
 
