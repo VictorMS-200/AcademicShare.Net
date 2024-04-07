@@ -34,10 +34,18 @@ public class ProfileController : Controller
     [HttpGet("Profile/{UserName}")]
     public async Task<IActionResult> Index(string? UserName)
     {
-        var user = await _context.Users.FirstOrDefaultAsync(m => m.UserName!.Equals(UserName));
+        var user = await _context.Users
+            .AsNoTracking()
+            .Include(u => u.Profile)
+            .Include(u => u.Posts)
+            .FirstOrDefaultAsync(m => m.UserName!.Equals(UserName));
         if (user is null) return NotFound();
 
-        var profile = await _context.Profiles.AsNoTracking().FirstOrDefaultAsync(p => p.User.Id.Equals(user.Id));
+        var profile = await _context.Profiles
+            .AsNoTracking()
+            .Include(p => p.User)
+            .FirstOrDefaultAsync(p => p.User.Id.Equals(user.Id));
+
         if (profile is null) return NotFound();
 
         var viewProfile = _mapper.Map<ViewProfileDto>(user);

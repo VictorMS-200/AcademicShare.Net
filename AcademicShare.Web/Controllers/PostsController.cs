@@ -85,7 +85,7 @@ public class PostsController : Controller
     [HttpPost]
     [ValidateAntiForgeryToken]
     public async Task<IActionResult> Create(
-        [Bind(include: "Title,Content,Image,Teacher")] GetPostDto post)
+        [Bind(include: "Title,Content,Image,Teacher,Resume")] GetPostDto post)
     {
         if (ModelState.IsValid)
         {
@@ -104,6 +104,7 @@ public class PostsController : Controller
             }
             else fileName = "default.png";
 
+            Console.WriteLine(post.Resume);
 
             var newPost = _mapper.Map<Post>(post);
             newPost.Image = fileName;

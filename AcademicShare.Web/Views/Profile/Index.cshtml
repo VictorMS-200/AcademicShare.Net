@@ -13,19 +13,18 @@
 
 @{
     ViewData["Title"] = "Profile";
-
     var PostList = await _context.Posts.Where(p => p.User.Id == Model.Id).OrderByDescending(c => c.CreatedAt).ToListAsync();
 }
 
 <div class="profile-Page">
     <div class="card mb-5">
-        <img class="card-img-top" src="../imagesProfile/banner/@Model.Profile.Banner" alt="Avatar Banner">
+        <img class="card-img-top" src="/imagesProfile/banner/@Model.Profile.Banner" alt="Avatar Banner">
         <div class="card-body little-profile text-center">
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col">
                         <div class="pro-img">
-                            <img src="../imagesProfile/avatar/@Model.Profile.ProfilePicture" alt="user">
+                            <img src="/imagesProfile/avatar/@Model.Profile.ProfilePicture" alt="user">
                         </div>
                         <h4>
                             @Model.Profile.FullName
@@ -35,7 +34,7 @@
 
                     <div class="col">
                         <div class="justify-content-center align-items-center">
-                            <Partial name="_LinksPartial" model="@Model" /> 
+                            @Html.Partial("_LinksPartial", Model)
                         </div>
                     </div>
                 </div>
@@ -80,7 +79,7 @@
                     <img src="/imagesPost/@post.Image" class="card-img-top" alt="@post.Title">
                     <div class="card-body">
                         <h5 class="card-title">@post.Title</h5>
-                        <p class="card-text text-break">@post.Content</p>
+                        <p class="card-text text-break">@post.Resume</p>
                         <p class="card-text text-muted mb-0">Teacher: @post.Teacher</p>
                         <p class="card-text"><small class="text-muted">@post.CreatedAt</small>
                         </p>
@@ -100,11 +99,5 @@
             </div>
         }
     </div>
-
-    <script>
-        console.log(@Model);
-    </script>
-
-
-    <partial name="_EditPostsPartial" model="@Model" />
+    @Html.Partial("_EditPostsPartial", Model)
 </div>

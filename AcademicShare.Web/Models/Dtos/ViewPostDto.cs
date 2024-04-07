@@ -11,6 +11,7 @@ public class ViewPostDto
     public string? UserId { get; set; }
     public string? PostTitle { get; set; }
     public string? PostContent { get; set; }
+    public string? PostResume { get; set; }
     public string? PostImage { get; set; }
     public string? CommentContent { get; set; }
     public string? CommentUserId { get; set; }

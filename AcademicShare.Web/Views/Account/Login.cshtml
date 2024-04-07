@@ -9,9 +9,9 @@
     <p class="lead">Use a local account to log in!</p>
 </div>
 <div class="row">
-    <div class="col py-3 mb-5">
-        @using (Html.BeginForm("Login", "Account", FormMethod.Post))
-        {
+    @using (Html.BeginForm("Login", "Account", FormMethod.Post))
+    {
+        <div class="col py-3 mb-0">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="col-sm-4">
                 <i class="fa-solid fa-envelope"></i>
@@ -25,14 +25,14 @@
                 @Html.PasswordFor(m => m.Password, new { @class = "form-control", @autocomplete = "current-password", @placeholder = "Password" })
                 @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
             </div>
-            <div class="row mt-4">
-                <div class="col-sm-2 d-grid">
-                    <button type="submit" class="btn btn-primary">Login</button>
-                </div>
-                <div class="col-sm-2 d-grid">
-                    <a class="btn btn-outline-primary" href="/" role="button">Return</a>
-                </div>
+        </div>
+        <div class="row justify-content-start mt-4">
+            <div class="col-sm-2 d-grid">
+               <button type="submit" class="btn btn-primary mt-2">Login</button>
             </div>
-        }
-    </div>
+            <div class="col-sm-2 d-grid">
+                <a class="btn btn-outline-primary mt-2" href="/" role="button">Return</a>
+            </div>
+        </div>
+    }
 </div>

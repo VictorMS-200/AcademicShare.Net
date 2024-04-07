@@ -10,47 +10,78 @@
         Create a new post. Here you can create a new post with a title, content, image and teacher.
     </p>
 </div>
-
+<hr>
 <div class="row">
-    <div class="col-md-4">
-        @using(Html.BeginForm("Create", "Posts", FormMethod.Post, new { enctype = "multipart/form-data" }))
-        {
+    @using (Html.BeginForm("Create", "Posts", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        <div class="py-3 mb-0">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="col-sm-4">
+            <div class="col-sm-6 my-2">
+                <i class="fa-regular fa-address-card"></i>
                 <label asp-for="Title" class="control-label"></label>
                 @Html.TextBoxFor(m => m.Title, new { @class = "form-control" })
                 @Html.ValidationMessageFor(m => m.Title, "", new { @class = "text-danger" })
             </div>
 
-            <div class="col-sm-4">
-                <label asp-for="Content" class="control-label"></label>
-                @Html.TextBoxFor(m => m.Content, new { @class = "form-control" })
-                @Html.ValidationMessageFor(m => m.Content, "", new { @class = "text-danger" })
-            </div>
-
-            <div class="col-sm-4">
-                <label asp-for="Image" class="control-label"></label>
-                @Html.TextBoxFor(m => m.Image, new { @class = "form-control", type = "file" })
-                @Html.ValidationMessageFor(m => m.Image, "", new { @class = "text-danger" })
-            </div>
-
-            <div class="col-sm-4">
+            <div class="col-sm-6 my-2">
+                <i class="fa-solid fa-chalkboard-user"></i>
                 <label asp-for="Teacher" class="control-label"></label>
                 @Html.TextBoxFor(m => m.Teacher, new { @class = "form-control" })
                 @Html.ValidationMessageFor(m => m.Teacher, "", new { @class = "text-danger" })
             </div>
 
-            <div class="form-group">
-                <button type="submit" class="btn btn-primary">Create</button>
+            <div class="col-sm-6 my-2">
+                <i class="fa-solid fa-file-export"></i>
+                <label asp-for="Image" class="control-label"></label>
+                @Html.TextBoxFor(m => m.Image, new { @class = "form-control", type = "file" })
+                @Html.ValidationMessageFor(m => m.Image, "", new { @class = "text-danger" })
             </div>
-        }
-    </div>
-</div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
+            <div class="col-sm-6 my-2">
+                <i class="fa-solid fa-file-export"></i>
+                <label asp-for="Resume" class="control-label"></label>
+                <textarea rows="5" asp-for="Resume" class="form-control"></textarea>
+                @Html.ValidationMessageFor(m => m.Resume, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="col-sm-10">
+                <i class="fa-solid fa-paperclip"></i>
+                <label asp-for="Content" class="control-label"></label>
+                <textarea id="tiny" asp-for="Content" class="form-control"></textarea>
+                @Html.ValidationMessageFor(m => m.Content, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+
+        <div class="row justify-content-start">
+            <div class="col-sm-3 d-grid me-2 mt-1">
+                <a class="btn btn-outline-primary" asp-controller="Posts" asp-action="Index" role="button">Return</a>
+            </div>
+            <div class="col-sm-3 d-grid mt-1">
+                <button type="submit" class="btn btn-primary">Create Post</button>
+            </div>
+        </div>
+    }
 </div>
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    <script src="https://cdn.tiny.cloud/1/iqs46z6w4t1twjwg1fhexhhsmo1k6l39uh2f2sa3lhulqhep/tinymce/7/tinymce.min.js"
+        referrerpolicy="origin"></script>
+    <script>
+        tinymce.init({
+            selector: 'textarea#tiny',
+                plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount checklist mediaembed casechange export formatpainter pageembed linkchecker a11ychecker tinymcespellchecker permanentpen powerpaste advtable advcode editimage advtemplate ai mentions tinycomments tableofcontents footnotes mergetags autocorrect typography inlinecss markdown',
+            toolbar: 'undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | link image media table mergetags | addcomment showcomments | spellcheckdialog a11ycheck typography | align lineheight | checklist numlist bullist indent outdent | emoticons charmap | removeformat',
+            tinycomments_mode: 'embedded',
+            tinycomments_author: 'Author name',
+            mergetags_list: [
+                { value: 'First.Name', title: 'First Name' },
+                { value: 'Email', title: 'Email' },
+            ],
+            ai_request: (request, respondWith) => respondWith.string(() => Promise.reject("See docs to implement AI Assistant")),
+        });
+    </script>
 }

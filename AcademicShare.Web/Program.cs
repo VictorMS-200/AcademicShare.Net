@@ -20,6 +20,7 @@ builder.Services.AddIdentity<User, IdentityRole>(options => options.SignIn.Requi
 	.AddEntityFrameworkStores<AcademicShareDbContext>();
 
 builder.Services.Configure<Microsoft.AspNetCore.Http.Json.JsonOptions>(options => options.SerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles);
+builder.Services.Configure<PasswordHasherOptions>(options => options.IterationCount = 300000);
 
 var app = builder.Build();
 
