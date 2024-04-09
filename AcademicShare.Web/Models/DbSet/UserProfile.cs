@@ -7,6 +7,7 @@ public class UserProfile
 {
     [Key]
     public int UserProfileId { get; set; }
+    [MaxLength(160)]
     public string? Bio { get; set; }
     public string? Location { get; set; }
     public string? FullName { get; set; }
@@ -19,5 +20,5 @@ public class UserProfile
     public IFormFile? ProfilePictureFile { get; set; }
     public DateOnly? BirthDate { get; set; }
     [ForeignKey("Profile")]
-    public User? User { get; set; }
+    public virtual User? User { get; set; }
 }

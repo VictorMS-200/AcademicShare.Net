@@ -18,14 +18,13 @@
                 <img src="/imagesPost/@Html.DisplayFor(modelItem => item.Image)" class="card-img-top" alt="@Html.DisplayFor(modelItem => item.Title)">
                 <div class="card-body">
                     <div class="d-inline-flex w-100 m-auto">
-                        <img src="/imagesProfile/avatar/@_context.Profiles.FirstOrDefault(u => u.User.Id.Equals(item.User.Id)).ProfilePicture"
+                        <img src="/imagesProfile/avatar/@_context.Profiles.FirstOrDefault(u => u.User.Id.Equals(item.Posts.Id)).ProfilePicture"
                             alt="" class="rounded-circle me-2" style="width: 55px; height: 55px; object-fit: cover;">
                         <div class="align-content-center">
                             <p class="card-text mx-1 mb-0" style="font-size: large;">@Html.DisplayFor(modelItem =>
-                            _context.Profiles.FirstOrDefault(u => u.User.Id.Equals(item.User.Id!)).FullName)</p>
-                            <p class="card-text mx-1 mb-0 text-muted" style="font-size: medium;">#@Html.DisplayFor(modelItem
-                            =>
-                            _context.Users.FirstOrDefault(u => u.Id == item.User.Id!).UserName)</p>
+                            _context.Profiles.FirstOrDefault(u => u.User.Id.Equals(item.Posts.Id!)).FullName)</p>
+                            <p class="card-text mx-1 mb-0 text-muted" style="font-size: medium;">#@Html.DisplayFor(
+                                modelItem => _context.Users.FirstOrDefault(u => u.Id == item.Posts.Id!).UserName)</p>
                         </div>
                     </div>
                     <hr>

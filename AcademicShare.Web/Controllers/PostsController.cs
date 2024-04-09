@@ -61,7 +61,7 @@ public class PostsController : Controller
             await PaginatedList<Post>.CreateAsync(
             posts.OrderByDescending(c => c.CreatedAt)
                 .AsNoTracking()
-                .Include(p => p.User)
+                .Include(p => p.Posts)
                 .Include(p => p.Comments)
                 .Include(p => p.Likes),
             pageNumber ?? 1, pageSize));
@@ -110,7 +110,7 @@ public class PostsController : Controller
             newPost.Image = fileName;
             newPost.CreatedAt = DateTime.Now;
             newPost.UpdatedAt = DateTime.Now;
-            newPost.User = await _userManager.GetUserAsync(User);
+            newPost.Posts = await _userManager.GetUserAsync(User);
 
             _context.Add(newPost);
             await _context.SaveChangesAsync();
@@ -140,8 +140,8 @@ public class PostsController : Controller
         {
             try
             {
-                var user = await _context.Users.FirstOrDefaultAsync(u => u.Id == post.User.Id);
-                post.User = user!;
+                var user = await _context.Users.FirstOrDefaultAsync(u => u.Id == post.Posts.Id);
+                post.Posts = user!;
                 post.UpdatedAt = DateTime.Now;
                 _context.Update(post);
                 await _context.SaveChangesAsync();
@@ -186,12 +186,7 @@ public class PostsController : Controller
     {
         if (id.Equals(null)) return NotFound();
 
-        var post = await _context.Posts
-            .Include(p => p.Comments)
-            .Include(p => p.Likes)
-            .Include(p => p.User)
-            .AsNoTracking()
-            .FirstOrDefaultAsync(p => p.PostId.Equals(id));
+        var post = await _context.Posts.AsNoTracking().FirstOrDefaultAsync(p => p.PostId.Equals(id));
 
         if (post == null) return NotFound();
 
@@ -286,12 +281,7 @@ public class PostsController : Controller
         
         int pageSize = 9;
         return View(await PaginatedList<Post>.CreateAsync(
-            likedPostsList
-                .OrderByDescending(c => c.CreatedAt)
-                .AsNoTracking()
-                .Include(p => p.User)
-                .Include(p => p.Comments), 
-                pageNumber ?? 1, pageSize));
+            likedPostsList.OrderByDescending(c => c.CreatedAt).AsNoTracking(), pageNumber ?? 1, pageSize));
     }
 
     private bool PostExists(Guid id) => _context.Posts.Any(e => e.PostId.Equals(id));

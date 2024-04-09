@@ -12,6 +12,7 @@ public class ViewProfileDto
     public string? Image { get; set; }
     public string? ProfileId { get; set; }
     public UserProfile? Profile { get; set; }
+    public ICollection<Follow>? Follow { get; set; }
     public ICollection<Comment>? Comments { get; set; }
     public ICollection<Post>? Posts { get; set; }
     public DateTime CreateAt { get; set; }

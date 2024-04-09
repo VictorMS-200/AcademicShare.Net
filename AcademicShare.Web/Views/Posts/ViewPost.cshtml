@@ -9,7 +9,7 @@
 @{
     ViewBag.Title = "Post";
     ViewData["Title"] = "Post " + Model.PostTitle;
-    var user = _context.Users.Find(Model.UserId);
+    var user = _context.Users.Find(Model.User.Id);
     var ListComment = await _context.Comments.Where(c => c.Post.PostId.Equals(Model.PostId)).OrderByDescending(c =>
     c.CreatedAt).ToListAsync();
 }
@@ -24,16 +24,16 @@
         alt="@Html.DisplayFor(modelItem => Model.PostTitle)">
     <div class="d-flex justify-content-start rounded my-2 p-0" style="background-color: rgb(212, 233, 252);">
         <div class="w-50 my-3 d-inline-flex m-4">
-            <img src="/imagesProfile/avatar/@_context.Profiles.FirstOrDefault(u => u.User.Id.Equals(Model.UserId!)).ProfilePicture"
+            <img src="/imagesProfile/avatar/@_context.Profiles.FirstOrDefault(u => u.User.Id.Equals(Model.User.Id!)).ProfilePicture"
                 alt="" class="rounded-circle me-2" style="width: 55px; height: 55px; object-fit: cover;">
             <div class="align-content-center">
                 <p class="card-text mx-1 mb-0" style="font-size: large;">
                     @Html.DisplayFor(modelItem => _context.Profiles.FirstOrDefault(u => u.User.Id ==
-                             Model.UserId!).FullName)
+                             Model.User.Id!).FullName)
                 </p>
                 <p class="card-text mx-1 mb-0 text-muted" style="font-size: medium;">
                     #@Html.DisplayFor(modelItem => _context.Users.FirstOrDefault(u => u.Id ==
-                            Model.UserId).UserName)
+                            Model.User.Id).UserName)
                 </p>
             </div>
         </div>
@@ -44,7 +44,7 @@
         @using (Html.BeginForm("IndexLike", "Posts", new { id = Model.PostId }, FormMethod.Post))
         {
             @Html.HiddenFor(model => model.PostId)
-            @Html.HiddenFor(model => model.UserId)
+            @Html.HiddenFor(model => model.User.Id)
             <button type="submit" class="btn btn-link text-decoration-none text-dark p-0">
                 @if (_context.Likes.FirstOrDefault(l => l.User.Id == SignInManager.UserManager.GetUserId(User) &&
                l.Post.PostId.Equals(Model.PostId)) == null)

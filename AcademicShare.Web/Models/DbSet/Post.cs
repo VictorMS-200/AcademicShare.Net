@@ -12,13 +12,13 @@ public class Post
     public required string Title { get; set; }
     [Required, MaxLength(10000, ErrorMessage = "Content can't be extended 10000 character")]
     public required string Content { get; set; }
+    [Required, MaxLength(200, ErrorMessage = "Resume can't be extended 200 character")]
     public required string Resume { get; set; }
 	public required string Image { get; set; }
     public required string Teacher { get; set; }
-    [ForeignKey("Posts")]
-    public required User User { get; set; }
-    public ICollection<Comment> Comments { get; set; } = new List<Comment>();
-    public ICollection<Like> Likes { get; set; } = new List<Like>();
+    public virtual required User Posts { get; set; }
+    public virtual ICollection<Comment> Comments { get; set; } = new List<Comment>();
+    public virtual ICollection<Like> Likes { get; set; } = new List<Like>();
     public DateTime CreatedAt { get; set; }
     public DateTime UpdatedAt { get; set; }
 }

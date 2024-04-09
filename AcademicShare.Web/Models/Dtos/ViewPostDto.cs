@@ -8,7 +8,7 @@ namespace AcademicShare.Web.Models.Dtos;
 public class ViewPostDto
 {
     public Guid PostId { get; set; }
-    public string? UserId { get; set; }
+    public User? User { get; set; }
     public string? PostTitle { get; set; }
     public string? PostContent { get; set; }
     public string? PostResume { get; set; }

@@ -2,6 +2,7 @@ using AcademicShare.Web.Context;
 using AcademicShare.Web.Models;
 using AcademicShare.Web.Models.Dtos;
 using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -30,20 +31,19 @@ public class ProfileController : Controller
         _userManager = userManager;
         _mapper = mapper;
     }
-
+    
+    [Authorize]
     [HttpGet("Profile/{UserName}")]
     public async Task<IActionResult> Index(string? UserName)
     {
         var user = await _context.Users
             .AsNoTracking()
-            .Include(u => u.Profile)
-            .Include(u => u.Posts)
             .FirstOrDefaultAsync(m => m.UserName!.Equals(UserName));
+            
         if (user is null) return NotFound();
 
         var profile = await _context.Profiles
             .AsNoTracking()
-            .Include(p => p.User)
             .FirstOrDefaultAsync(p => p.User.Id.Equals(user.Id));
 
         if (profile is null) return NotFound();
@@ -53,13 +53,39 @@ public class ProfileController : Controller
         return View(viewProfile);
     }
 
+    [Authorize]
     [HttpPost("Profile/{UserName}")]
     [ValidateAntiForgeryToken]
     public async Task<IActionResult> Index(
-        [Bind("Profile")]
         ViewProfileDto UserProfile)
     {
-        Console.WriteLine(UserProfile.Profile.Banner + " fsdfsdf");
+        if (UserProfile.Follow is not null)
+        {
+            var user = await _userManager.GetUserAsync(User);
+            var followed = await _context.Users.FirstOrDefaultAsync(u => u.UserName == UserProfile.UserName);
+
+            if (_context.Follow.Any(f => f.FollowerId.Equals(user!.Id) && f.FollowedId.Equals(followed!.Id)))
+            {
+                var followRemove = await _context.Follow.FirstOrDefaultAsync(f => f.FollowerId.Equals(user.Id) && f.FollowedId.Equals(followed.Id));
+                
+                _context.Follow.Remove(followRemove!);
+
+                await _context.SaveChangesAsync();
+
+                return RedirectToAction("Index", new { UserName = followed.UserName });
+            }
+
+            var follow = new Follow
+            {
+                FollowerId = user.Id,
+                FollowedId = followed.Id
+            };
+
+            _context.Follow.Add(follow);
+            await _context.SaveChangesAsync();
+
+            return RedirectToAction("Index", new { UserName = followed.UserName });
+        }
         if (ModelState.IsValid)
         {
             string fileNameBanner;
@@ -77,7 +103,6 @@ public class ProfileController : Controller
 
             var user = await _userManager.GetUserAsync(User);
             var profileToUpdate = await _context.Profiles.FirstOrDefaultAsync(p => p.User.Id == user!.Id);
-            
 
             DeleteFile(profileToUpdate!.Banner!, fileNameBanner, "banner");
             DeleteFile(profileToUpdate.ProfilePicture!, fileNameProfilePicture, "avatar");
@@ -99,23 +124,6 @@ public class ProfileController : Controller
         }
 
         return View(UserProfile);
-    }
-
-    [HttpGet("Profile/{UserName}/Edit")]
-    public async Task<IActionResult> Edit(string? UserName)
-    {
-        var user = await _context.Users.FirstOrDefaultAsync(m => m.UserName.Equals(UserName));
-
-        if (user is null) return NotFound();
-
-        var profile = await _context.Profiles.FirstOrDefaultAsync(p => p.User.Id.Equals(user.Id));
-
-        if (profile is null) return NotFound();
-
-        if (user.Id != _userManager.GetUserId(User)) return Forbid();
-
-        ViewBag.User = user;
-        return View(user);
     }
 
     public async Task<string> CreateFile(

@@ -18,7 +18,7 @@
     <p class="lead">Welcome to the posts page. Here you can see all the posts that have been created by the users.</p>
 </div>
 
-@Html.Partial("_SearchPostPartial", Model)
+<partial name="_SearchPostPartial" model="Model" />
 
 <div class="d-flex justify-content-start mt-4">
     <a asp-action="Create" asp-controller="Posts">
@@ -42,4 +42,4 @@
 </div>
 <hr>
 
-@Html.Partial("_PostPagePartial", Model)
+<partial name="_PostPagePartial" model="Model" />

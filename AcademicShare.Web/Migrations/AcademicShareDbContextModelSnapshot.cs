@@ -18,6 +18,9 @@ namespace AcademicShare.Web.Migrations
 #pragma warning disable 612, 618
             modelBuilder
                 .HasAnnotation("ProductVersion", "8.0.3")
+                .HasAnnotation("Proxies:ChangeTracking", false)
+                .HasAnnotation("Proxies:CheckEquality", false)
+                .HasAnnotation("Proxies:LazyLoading", true)
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
@@ -48,6 +51,28 @@ namespace AcademicShare.Web.Migrations
                     b.HasIndex("UserId");
 
                     b.ToTable("Comments");
+                });
+
+            modelBuilder.Entity("AcademicShare.Web.Models.Dtos.Follow", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("FollowedId")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("FollowerId")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("UserId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("Follow");
                 });
 
             modelBuilder.Entity("AcademicShare.Web.Models.Dtos.Like", b =>
@@ -89,13 +114,14 @@ namespace AcademicShare.Web.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Posts")
+                    b.Property<string>("PostsId")
                         .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Resume")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(200)
+                        .HasColumnType("nvarchar(200)");
 
                     b.Property<string>("Teacher")
                         .IsRequired()
@@ -111,7 +137,7 @@ namespace AcademicShare.Web.Migrations
 
                     b.HasKey("PostId");
 
-                    b.HasIndex("Posts");
+                    b.HasIndex("PostsId");
 
                     b.ToTable("Posts");
                 });
@@ -211,7 +237,8 @@ namespace AcademicShare.Web.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Bio")
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(160)
+                        .HasColumnType("nvarchar(160)");
 
                     b.Property<DateOnly?>("BirthDate")
                         .HasColumnType("date");
@@ -390,6 +417,13 @@ namespace AcademicShare.Web.Migrations
                     b.Navigation("User");
                 });
 
+            modelBuilder.Entity("AcademicShare.Web.Models.Dtos.Follow", b =>
+                {
+                    b.HasOne("AcademicShare.Web.Models.Dtos.User", null)
+                        .WithMany("Follow")
+                        .HasForeignKey("UserId");
+                });
+
             modelBuilder.Entity("AcademicShare.Web.Models.Dtos.Like", b =>
                 {
                     b.HasOne("AcademicShare.Web.Models.Dtos.Post", "Post")
@@ -409,13 +443,13 @@ namespace AcademicShare.Web.Migrations
 
             modelBuilder.Entity("AcademicShare.Web.Models.Dtos.Post", b =>
                 {
-                    b.HasOne("AcademicShare.Web.Models.Dtos.User", "User")
+                    b.HasOne("AcademicShare.Web.Models.Dtos.User", "Posts")
                         .WithMany("Posts")
-                        .HasForeignKey("Posts")
+                        .HasForeignKey("PostsId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("User");
+                    b.Navigation("Posts");
                 });
 
             modelBuilder.Entity("AcademicShare.Web.Models.Dtos.UserProfile", b =>
@@ -489,6 +523,8 @@ namespace AcademicShare.Web.Migrations
             modelBuilder.Entity("AcademicShare.Web.Models.Dtos.User", b =>
                 {
                     b.Navigation("Comments");
+
+                    b.Navigation("Follow");
 
                     b.Navigation("Likes");
 

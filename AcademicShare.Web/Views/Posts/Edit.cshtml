@@ -14,7 +14,7 @@
         {
             <div class="justify-content-start">
                 @Html.HiddenFor(model => model.UpdatedAt)
-                @Html.HiddenFor(model => model.User.Id)
+                @Html.HiddenFor(model => model.Posts.Id)
                 @Html.HiddenFor(model => model.PostId)
                 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                 <div class="col-sm-6">

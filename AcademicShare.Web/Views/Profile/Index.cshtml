@@ -13,7 +13,12 @@
 
 @{
     ViewData["Title"] = "Profile";
-    var PostList = await _context.Posts.Where(p => p.User.Id == Model.Id).OrderByDescending(c => c.CreatedAt).ToListAsync();
+    var PostList = await _context.Posts.Where(p => p.Posts.Id == Model.Id).OrderByDescending(c => c.CreatedAt).ToListAsync();
+    var user = await SignInManager.UserManager.FindByIdAsync(Model.Id!);
+    var follows = _context.Follow.Where(f => f.FollowedId.Equals(Model.Id)).Count();
+    var followers = _context.Follow.Where(f => f.FollowerId.Equals(Model.Id)).Count();
+
+    var userSeguindo = _context.Follow.FirstOrDefault(f => f.FollowedId.Equals(Model.Id) && f.FollowerId.Equals(SignInManager.UserManager.GetUserId(User)));
 }
 
 <div class="profile-Page">
@@ -34,7 +39,9 @@
 
                     <div class="col">
                         <div class="justify-content-center align-items-center">
-                            @Html.Partial("_LinksPartial", Model)
+                            <partial name="_LinksPartial" model="Model" />
+                            <a>Seguidores @follows</a>
+                            <a>Seguindo @followers</a>
                         </div>
                     </div>
                 </div>
@@ -61,6 +68,26 @@
                         </button>
                     </a>
                 </div>
+            }
+            else
+            {
+                <form asp-action="Index" asp-controller="Profile" method="post">
+                    @Html.HiddenFor(m => m.Id) 
+                    @Html.HiddenFor(m => m.Follow)
+                    @if (userSeguindo is null)
+                    {
+                         <button type="submit" class="btn btn-danger">
+                            Follow
+                        </button>
+                    }
+                    else
+                    {
+                         <button type="submit" class="btn btn-danger">
+                            Unfollow
+                        </button>
+                    }
+                </form>
+                
             }
         </div>
         <div class="card-footer">
@@ -99,5 +126,5 @@
             </div>
         }
     </div>
-    @Html.Partial("_EditPostsPartial", Model)
+    <partial name="_EditPostsPartial" model="Model" />
 </div>

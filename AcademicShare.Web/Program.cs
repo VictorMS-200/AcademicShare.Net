@@ -14,7 +14,7 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
 builder.Services.AddDbContext<AcademicShareDbContext>(options =>
-	options.UseSqlServer(connectionString));
+	options.UseSqlServer(connectionString).UseLazyLoadingProxies().UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking));
 
 builder.Services.AddIdentity<User, IdentityRole>(options => options.SignIn.RequireConfirmedAccount = false)
 	.AddEntityFrameworkStores<AcademicShareDbContext>();

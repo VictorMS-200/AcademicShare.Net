@@ -7,6 +7,6 @@ public class Like
 {
     [Key]
     public Guid LikeId { get; set; }
-    public required Post Post { get; set; }
-    public required User User { get; set; }
+    public virtual required Post Post { get; set; }
+    public virtual required User User { get; set; }
 }

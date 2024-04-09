@@ -18,7 +18,7 @@
 }
 else
 {
-    @Html.Partial("_SearchPostPartial", Model)
+    @Html.PartialAsync("_SearchPostPartial", Model)
     <div class="d-flex justify-content-start mt-4">
         <a asp-action="Create" asp-controller="Posts">
             <button class="btn btn-primary" type="submit">

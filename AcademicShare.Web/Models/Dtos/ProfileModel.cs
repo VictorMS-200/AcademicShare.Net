@@ -8,11 +8,11 @@ public class ProfileViewModel
 {
     [Key]
     public int ProfileId { get; set; }
-    public string Location { get; set; } = string.Empty;
-    public string Website { get; set; } = string.Empty;
-    public string Bio { get; set; } = string.Empty;
+    public string? Location { get; set; }
+    public string? Website { get; set; }
+    public string? Bio { get; set; }
     public IFormFile? Banner { get; set; }
     public IFormFile? ProfilePicture { get; set; }
     public DateOnly? BirthDate { get; set; }
-    public string UserId { get; set; } = string.Empty;
+    public string? UserId { get; set; }
 }

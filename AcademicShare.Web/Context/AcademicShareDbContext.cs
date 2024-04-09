@@ -14,6 +14,7 @@ public class AcademicShareDbContext : IdentityDbContext<User>
 	public DbSet<Comment> Comments { get; set; }
 	public DbSet<UserProfile> Profiles { get; set; }
 	public DbSet<Like> Likes { get; set; }
+	public DbSet<Follow> Follow { get; set; }
 
 	protected override void OnModelCreating(ModelBuilder modelBuilder)
 	{
@@ -29,7 +30,7 @@ public class AcademicShareDbContext : IdentityDbContext<User>
 
 		modelBuilder.Entity<User>()
 			.HasMany(u => u.Posts)
-			.WithOne(p => p.User)
+			.WithOne(p => p.Posts)
 			.OnDelete(DeleteBehavior.Cascade);
 
 		modelBuilder.Entity<UserProfile>()

@@ -1,0 +1,54 @@
+@model PaginatedList<User>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<div>
+    <h1 class="display-4">Users</h1>
+    <p class="lead">Welcome </p>
+</div>
+
+@using(Html.BeginForm("Index", "User", FormMethod.Get))
+{
+    <div class="justify-content-start align-content-center d-flex mt-4">
+        <div class="form-floating col-md-5">
+            @Html.TextBox("SearchString", null, new { @class = "form-control", @placeholder = "Search title" })
+            <label>Search For Users</label>
+        </div>
+        <input class="btn btn-primary mx-2 m-auto" type="submit" value="Filter" />
+    </div>
+}
+
+@if (Model.Count == 0)
+{
+    <div class="alert alert-warning mt-4" role="alert">
+        No users found
+    </div>
+}
+<hr />
+@foreach(var user in Model)
+{
+    <div class="col my-2">
+        <div class="card h-100">
+            <div class="card-body">
+                <div class="d-inline-flex w-100 m-auto">
+                    <img src="/imagesProfile/avatar/@user.Profile.ProfilePicture" alt="" class="rounded-circle me-2" style="width: 55px; height: 55px; object-fit: cover;">
+                    <div class="align-content-center">
+                        <p class="card-text mx-1 mb-0" style="font-size: large;">@user.Profile.FullName</p>
+                        <p class="card-text mx-1 mb-0 text-muted" style="font-size: medium;">#@user.UserName</p>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-between mt-2">
+                    <p>@user.Profile.Bio</p>
+                    <a asp-controller="Profile" asp-action="Index" asp-route-UserName="@user.UserName" class="btn btn-primary">View Profile</a>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+@section Styles {
+    <link rel="stylesheet" href="~/css/Users.css" />
+}
+

@@ -162,15 +162,35 @@ namespace AcademicShare.Web.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Follow",
+                columns: table => new
+                {
+                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    FollowerId = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    FollowedId = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    UserId = table.Column<string>(type: "nvarchar(450)", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Follow", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Follow_AspNetUsers_UserId",
+                        column: x => x.UserId,
+                        principalTable: "AspNetUsers",
+                        principalColumn: "Id");
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Posts",
                 columns: table => new
                 {
                     PostId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     Title = table.Column<string>(type: "nvarchar(80)", maxLength: 80, nullable: false),
-                    Content = table.Column<string>(type: "nvarchar(500)", maxLength: 500, nullable: false),
+                    Content = table.Column<string>(type: "nvarchar(max)", maxLength: 10000, nullable: false),
+                    Resume = table.Column<string>(type: "nvarchar(200)", maxLength: 200, nullable: false),
                     Image = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Teacher = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Posts = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    PostsId = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
                     UpdatedAt = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
@@ -178,8 +198,8 @@ namespace AcademicShare.Web.Migrations
                 {
                     table.PrimaryKey("PK_Posts", x => x.PostId);
                     table.ForeignKey(
-                        name: "FK_Posts_AspNetUsers_Posts",
-                        column: x => x.Posts,
+                        name: "FK_Posts_AspNetUsers_PostsId",
+                        column: x => x.PostsId,
                         principalTable: "AspNetUsers",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
@@ -191,7 +211,7 @@ namespace AcademicShare.Web.Migrations
                 {
                     UserProfileId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Bio = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Bio = table.Column<string>(type: "nvarchar(160)", maxLength: 160, nullable: true),
                     Location = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     FullName = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Website = table.Column<string>(type: "nvarchar(max)", nullable: true),
@@ -217,9 +237,9 @@ namespace AcademicShare.Web.Migrations
                 {
                     CommentId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     Content = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
                     PostId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    UserId = table.Column<string>(type: "nvarchar(450)", nullable: true)
+                    UserId = table.Column<string>(type: "nvarchar(450)", nullable: true),
+                    CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -311,6 +331,11 @@ namespace AcademicShare.Web.Migrations
                 column: "UserId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_Follow_UserId",
+                table: "Follow",
+                column: "UserId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Likes_PostId",
                 table: "Likes",
                 column: "PostId");
@@ -321,9 +346,9 @@ namespace AcademicShare.Web.Migrations
                 column: "UserId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Posts_Posts",
+                name: "IX_Posts_PostsId",
                 table: "Posts",
-                column: "Posts");
+                column: "PostsId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Profiles_Profile",
@@ -353,6 +378,9 @@ namespace AcademicShare.Web.Migrations
 
             migrationBuilder.DropTable(
                 name: "Comments");
+
+            migrationBuilder.DropTable(
+                name: "Follow");
 
             migrationBuilder.DropTable(
                 name: "Likes");
